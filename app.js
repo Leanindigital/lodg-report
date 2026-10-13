@@ -74,8 +74,7 @@
     var kpis = [
       { v: int(t.leads), l: "Meta-reported leads", primary: true },
       { v: money(x.cpl), l: "Cost per Meta-reported lead", primary: true },
-      { v: moneyShort(t.spend), l: "Spend" },
-      { v: int(t.registrations), l: "Meta-reported registrations" }
+      { v: moneyShort(t.spend), l: "Spend" }
     ];
     $("kpis").innerHTML = kpis.map(function (k) {
       return '<div class="kpi' + (k.primary ? " kpi--primary" : "") + '"><div class="kpi__label">' + esc(k.l) + '</div><div class="kpi__value">' + esc(k.v) + "</div></div>";
@@ -160,6 +159,12 @@
     }
   }
 
+  var AD_SCREENSHOTS = {
+    "120251375340930660": "assets/ad-refunding-users.png",
+    "120251375340970660": "assets/ad-wife.png",
+    "120251376356230660": "assets/ad-47gst.png"
+  };
+
   function renderAds(d, commentary) {
     var labels = {};
     d.toDate.adsets.forEach(function (s) { labels[s.id] = s.label; });
@@ -170,7 +175,10 @@
 
     $("top-ads").innerHTML = top.length ? top.map(function (a, i) {
       var x = derive(a);
-      return '<article class="ad-card"><div class="ad-card__rank">' + String(i + 1).padStart(2, "0") + " · " + esc(labels[a.adsetId] || "") + "</div>" +
+      var shot = AD_SCREENSHOTS[a.id];
+      return '<article class="ad-card">' +
+        (shot ? '<img class="ad-card__shot" src="' + esc(shot) + '" alt="' + esc(shortAdName(a.name)) + ' ad creative">' : "") +
+        '<div class="ad-card__rank">' + String(i + 1).padStart(2, "0") + " · " + esc(labels[a.adsetId] || "") + "</div>" +
         "<h3>" + esc(shortAdName(a.name)) + "</h3>" +
         '<div class="ad-card__cpl">' + money(x.cpl) + " <small>per lead</small></div>" +
         '<div class="ad-card__grid">' +

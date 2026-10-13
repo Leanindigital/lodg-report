@@ -76,7 +76,7 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; }
 }
 
 /* KPIs */
-.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 32px; }
+.kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 32px; }
 .kpi { background: var(--blue-soft); border-radius: var(--radius); padding: 22px 22px 20px; }
 .kpi--primary { background: var(--blue); color: #fff; }
 .kpi__label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--blue); }
@@ -124,7 +124,8 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; }
 
 /* Top ads */
 .top-ads { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 28px; }
-.ad-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; }
+.ad-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; overflow: hidden; }
+.ad-card__shot { width: 100%; max-width: 220px; height: auto; border-radius: 10px; border: 1px solid var(--line); margin: -4px auto 16px; display: block; }
 .ad-card__rank { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--blue); font-weight: 600; }
 .ad-card h3 { font-size: 20px; margin: 6px 0 4px; line-height: 1.25; }
 .ad-card__cpl { font-size: 28px; font-weight: 700; color: var(--blue); margin: 10px 0 16px; }

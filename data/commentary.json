@@ -1,5 +1,5 @@
 {
-  "reviewedOn": "2026-10-06",
+  "reviewedOn": "2026-10-13",
   "reviewedBy": "Logan, Lean In Digital",
   "contactEmail": "logan@leanindigital.com",
   "adsetTakeaway": "Video/Reels has produced most of the reported leads at a materially lower cost per lead. Static still contributes leads through the $47+gst ad and should not be dismissed.",
@@ -14,18 +14,18 @@
       "body": "Refunding Users, 'i still get my wife to do it' and $47+gst account for nearly every reported lead. Other ads have had little spend, so it is too early to call them failures."
     },
     {
-      "title": "Leads are Meta-reported, not yet confirmed signups",
-      "body": "Meta's Lead events still need to be matched against Lodg's completed registrations and activations."
+      "title": "How a lead is counted",
+      "body": "Meta reports a lead once someone submits the sign-up email within the same browser session as clicking the ad. If someone clicks on one device or browser and comes back later to sign up on another, Meta may not attribute that lead back to the ad, so the true number of people reached is likely a bit higher than reported here."
     }
   ],
   "nextSteps": [
     {
-      "title": "Scale Video/Reels, measured",
-      "body": "Prioritise a measured budget increase for the Video/Reels ad set and its two productive ads. Monitor whether cost per lead remains stable as delivery grows."
+      "title": "Shift budget from Static into Video/Reels",
+      "body": "I'll shift some budget from the Static ad set into Video/Reels. After another stable or promising week, we can look to scale further."
     },
     {
-      "title": "Keep $47+gst, refresh Static",
-      "body": "Keep the productive $47+gst static ad running, while testing fresh static variants rather than increasing static spend at the same rate as video."
+      "title": "Refresh creative before fatigue sets in",
+      "body": "We're creating new ads now to bring in fresh creative before the current top performers start to fatigue."
     },
     {
       "title": "Match leads to registrations",
