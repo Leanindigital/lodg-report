@@ -1,0 +1,43 @@
+{
+  "reviewedOn": "2026-10-06",
+  "reviewedBy": "Logan, Lean In Digital",
+  "contactEmail": "logan@leanindigital.com",
+  "adsetTakeaway": "Video/Reels has produced most of the reported leads at a materially lower cost per lead. Static still contributes leads through the $47+gst ad and should not be dismissed.",
+  "creativeNote": "The natural, personality-led video content is also the strongest paid performer so far. Keep creating and sharing authentic, useful organic content. Paid spend can then take the strongest ideas further, while the results show which messages deserve more creative variations.",
+  "findings": [
+    {
+      "title": "Video/Reels is leading",
+      "body": "Video/Reels has generated the majority of Meta-reported leads with a lower cost per lead than Static."
+    },
+    {
+      "title": "A few ads are doing the work",
+      "body": "Refunding Users, 'i still get my wife to do it' and $47+gst account for nearly every reported lead. Other ads have had little spend, so it is too early to call them failures."
+    },
+    {
+      "title": "Leads are Meta-reported, not yet confirmed signups",
+      "body": "Meta's Lead events still need to be matched against Lodg's completed registrations and activations."
+    }
+  ],
+  "nextSteps": [
+    {
+      "title": "Scale Video/Reels, measured",
+      "body": "Prioritise a measured budget increase for the Video/Reels ad set and its two productive ads. Monitor whether cost per lead remains stable as delivery grows."
+    },
+    {
+      "title": "Keep $47+gst, refresh Static",
+      "body": "Keep the productive $47+gst static ad running, while testing fresh static variants rather than increasing static spend at the same rate as video."
+    },
+    {
+      "title": "Match leads to registrations",
+      "body": "Reconcile Meta's Lead events with Lodg's completed registrations and subsequent activations before treating them as confirmed signups or increasing spend substantially."
+    },
+    {
+      "title": "Increase budget gradually",
+      "body": "There is room to increase gradually, led by demonstrated results, rather than moving immediately to the full budget pace."
+    }
+  ],
+  "budget": [
+    { "value": "NZ$70/day", "label": "Current ad-set budgets, NZ$35/day each" },
+    { "value": "NZ$4,000", "label": "Discussed media budget over 30 days" }
+  ]
+}
