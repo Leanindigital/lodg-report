@@ -52,25 +52,16 @@
   }
 
   // ---------- funnel ----------
-  // stages: [{ label, value, rateLabel, rate, status: 'good'|'watch'|'poor'|null, note }]
+  // stages: [{ label, value, rateLabel, rate, status: 'great'|'good'|'watch'|'poor'|null, note }]
+  var STATUS_LABELS = { great: "Great - Above average", good: "Good - On track", watch: "Ok - Watch", poor: "Low - Take action" };
   function renderFunnel(containerId, stages) {
     var max = Math.max.apply(null, stages.map(function (s) { return s.value || 0; })) || 1;
-    var statusLabels = { good: "On track", watch: "Watch", poor: "Needs attention" };
     var html = stages.map(function (s, i) {
       var width = Math.max(6, (s.value / max) * 100);
       var statusCls = s.status ? " funnel__bar--" + s.status : "";
       var rateCls = s.status ? " funnel__rate--" + s.status : "";
-      var statusLabel = statusLabels[s.status] || "";
-      var connector = "";
-      if (i > 0) {
-        var prev = stages[i - 1].value;
-        var dropped = Math.max(0, prev - s.value);
-        if (dropped > 0) {
-          connector = '<div class="funnel__connector">↓ ' + int(dropped) + " didn't continue to the next stage</div>";
-        }
-      }
-      return (i > 0 ? connector : "") +
-        '<div class="funnel__row">' +
+      var statusLabel = STATUS_LABELS[s.status] || "";
+      return '<div class="funnel__row">' +
           '<div class="funnel__meta">' +
             '<div class="funnel__step">' + String(i + 1).padStart(2, "0") + "</div>" +
             '<div><div class="funnel__label">' + esc(s.label) + '</div><div class="funnel__value">' + int(s.value) + "</div></div>" +
@@ -85,9 +76,10 @@
     $(containerId).innerHTML = '<div class="funnel-diagram">' + html + "</div>";
   }
 
-  function rateStatus(rate, good, watch) {
-    // rate in %, good/watch are lower bounds
+  function rateStatus(rate, great, good, watch) {
+    // rate in %, great/good/watch are lower bounds, descending
     if (rate == null) return null;
+    if (rate >= great) return "great";
     if (rate >= good) return "good";
     if (rate >= watch) return "watch";
     return "poor";
@@ -162,19 +154,19 @@
       {
         label: "Link clicks", value: t.linkClicks,
         rateLabel: pct(ctrPct) + " click-through",
-        status: rateStatus(ctrPct, 2, 1),
+        status: rateStatus(ctrPct, 3, 2, 1),
         note: ctrPct != null && ctrPct < 1 ? "Low click-through — the ad or audience may need attention before spend." : null
       },
       {
         label: "Landing page views", value: t.landingPageViews,
         rateLabel: pct(lpvPct) + " of clicks loaded the page",
-        status: rateStatus(lpvPct, 70, 40),
+        status: rateStatus(lpvPct, 85, 70, 40),
         note: lpvPct != null && lpvPct < 70 ? "A chunk of clicks aren't reaching the landing page — worth checking load speed or link setup." : null
       },
       {
         label: "Leads", value: t.leads,
         rateLabel: pct(leadPct) + " of landing page views became a lead",
-        status: rateStatus(leadPct, 3, 1),
+        status: rateStatus(leadPct, 5, 3, 1),
         note: leadPct != null && leadPct < 1 ? "Page is getting seen but not converting — look at the landing page itself, not the ad." : null
       }
     ];
@@ -356,7 +348,7 @@
       {
         label: "Clicks", value: t.clicks,
         rateLabel: pct(ctrPct) + " click-through",
-        status: rateStatus(ctrPct, 4, 2)
+        status: rateStatus(ctrPct, 6, 4, 2)
       },
       {
         label: "Conversions", value: t.conversions,

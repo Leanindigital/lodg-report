@@ -122,10 +122,6 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; }
 /* Funnel */
 .funnel { margin-top: 28px; }
 .funnel-diagram { display: flex; flex-direction: column; }
-.funnel__connector {
-  font-size: 13px; color: var(--muted); padding: 10px 0 10px 56px; margin-left: 15px;
-  border-left: 2px dashed var(--blue-mute);
-}
 .funnel__row {
   display: grid; grid-template-columns: 230px 1fr; gap: 28px; align-items: center;
   padding: 20px 0; border-bottom: 1px solid var(--line);
@@ -142,10 +138,12 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; }
 .funnel__bar-wrap { background: #fff; border-radius: 6px; height: 14px; overflow: hidden; }
 .section--tint .funnel__bar-wrap { background: rgba(255, 255, 255, 0.6); }
 .funnel__bar { height: 100%; background: var(--blue-mute); border-radius: 6px; }
+.funnel__bar--great { background: var(--blue); }
 .funnel__bar--good { background: var(--good); }
 .funnel__bar--watch { background: #c7900f; }
 .funnel__bar--poor { background: var(--bad); }
 .funnel__rate { font-size: 14px; color: var(--muted); margin-top: 8px; }
+.funnel__rate--great { color: var(--blue); }
 .funnel__rate--good { color: var(--good); }
 .funnel__rate--watch { color: #8a6400; }
 .funnel__rate--poor { color: var(--bad); }
@@ -153,6 +151,7 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; }
   display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
   padding: 2px 9px; border-radius: 999px; background: rgba(0, 0, 0, 0.06); margin-left: 4px;
 }
+.funnel__status--great { background: var(--blue-soft); color: var(--blue); }
 .funnel__status--good { background: #e7f5ee; color: var(--good); }
 .funnel__status--watch { background: #fdf3de; color: #8a6400; }
 .funnel__status--poor { background: #fbeaea; color: var(--bad); }
@@ -265,7 +264,6 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; }
   .adsets, .top-ads, .next, .themes { grid-template-columns: 1fr; }
   .budget { position: static; }
   .funnel__row { grid-template-columns: 1fr; gap: 10px; }
-  .funnel__connector { padding-left: 0; margin-left: 15px; }
 }
 @media (max-width: 560px) {
   .wrap { padding: 0 18px; }
