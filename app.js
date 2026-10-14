@@ -55,20 +55,34 @@
   // stages: [{ label, value, rateLabel, rate, status: 'good'|'watch'|'poor'|null, note }]
   function renderFunnel(containerId, stages) {
     var max = Math.max.apply(null, stages.map(function (s) { return s.value || 0; })) || 1;
-    $(containerId).innerHTML = stages.map(function (s, i) {
+    var statusLabels = { good: "On track", watch: "Watch", poor: "Needs attention" };
+    var html = stages.map(function (s, i) {
       var width = Math.max(6, (s.value / max) * 100);
-      var statusCls = s.status ? " funnel__stage--" + s.status : "";
-      var statusLabel = { good: "On track", watch: "Watch", poor: "Needs attention" }[s.status] || "";
-      return '<div class="funnel__stage">' +
-        '<div class="funnel__bar-wrap"><div class="funnel__bar' + statusCls + '" style="width:' + width.toFixed(1) + '%"></div></div>' +
+      var statusCls = s.status ? " funnel__bar--" + s.status : "";
+      var rateCls = s.status ? " funnel__rate--" + s.status : "";
+      var statusLabel = statusLabels[s.status] || "";
+      var connector = "";
+      if (i > 0) {
+        var prev = stages[i - 1].value;
+        var dropped = Math.max(0, prev - s.value);
+        if (dropped > 0) {
+          connector = '<div class="funnel__connector">↓ ' + int(dropped) + " didn't continue to the next stage</div>";
+        }
+      }
+      return (i > 0 ? connector : "") +
         '<div class="funnel__row">' +
-          '<div class="funnel__label">' + esc(s.label) + "</div>" +
-          '<div class="funnel__value">' + int(s.value) + "</div>" +
-          (i > 0 ? '<div class="funnel__rate' + statusCls + '">' + esc(s.rateLabel) + (statusLabel ? ' <span class="funnel__status">' + statusLabel + "</span>" : "") + "</div>" : '<div class="funnel__rate"></div>') +
-        "</div>" +
-        (s.note ? '<div class="funnel__note">' + esc(s.note) + "</div>" : "") +
+          '<div class="funnel__meta">' +
+            '<div class="funnel__step">' + String(i + 1).padStart(2, "0") + "</div>" +
+            '<div><div class="funnel__label">' + esc(s.label) + '</div><div class="funnel__value">' + int(s.value) + "</div></div>" +
+          "</div>" +
+          '<div class="funnel__bar-col">' +
+            '<div class="funnel__bar-wrap"><div class="funnel__bar' + statusCls + '" style="width:' + width.toFixed(1) + '%"></div></div>' +
+            (i > 0 ? '<div class="funnel__rate' + rateCls + '">' + esc(s.rateLabel) + (statusLabel ? ' <span class="funnel__status funnel__status--' + s.status + '">' + statusLabel + "</span>" : "") + "</div>" : "") +
+            (s.note ? '<div class="funnel__note">' + esc(s.note) + "</div>" : "") +
+          "</div>" +
         "</div>";
     }).join("");
+    $(containerId).innerHTML = '<div class="funnel-diagram">' + html + "</div>";
   }
 
   function rateStatus(rate, good, watch) {
@@ -307,7 +321,9 @@
 
   // ---------- GOOGLE TAB ----------
   function renderGoogle(g) {
-    $("g-results-sub").textContent = g.window.label + " (" + dateLong(g.window.since) + " to " + dateLong(g.window.until) + "), account-wide.";
+    $("g-campaign-pill").textContent = g.campaign.name;
+    $("g-results-sub").textContent = g.window.label + " (" + dateLong(g.window.since) + " to " + dateLong(g.window.until) + ").";
+    $("g-funnel-sub").textContent = "Impressions → clicks → conversions, " + g.window.label.toLowerCase() + ".";
     var t = g.totals;
     var ctr = ratio(t.clicks, t.impressions);
     var cpc = ratio(t.cost, t.clicks);
@@ -323,6 +339,10 @@
       return '<div class="kpi' + (k.primary ? " kpi--primary" : "") + '"><div class="kpi__label">' + esc(k.l) + '</div><div class="kpi__value">' + esc(k.v) + "</div></div>";
     }).join("");
 
+    if (g.newCampaignNote) {
+      $("g-new-note").hidden = false;
+      $("g-new-note").textContent = g.newCampaignNote;
+    }
     if (g.trackingNote) {
       $("g-tracking-note").hidden = false;
       $("g-tracking-note").textContent = g.trackingNote;
@@ -342,17 +362,9 @@
         label: "Conversions", value: t.conversions,
         rateLabel: pct(convPct) + " of clicks converted",
         status: null,
-        note: "Conversion tracking needs fixing on the live campaign (see note above) — treat this stage as directional, not final."
+        note: "Conversion tracking needs fixing (see note above) — treat this stage as directional, not final."
       }
     ]);
-
-    $("g-campaigns-table").querySelector("tbody").innerHTML = g.campaigns.map(function (c) {
-      var ctrC = ratio(c.clicks, c.impressions);
-      return "<tr><td>" + esc(c.name) + (c.note ? '<div class="muted" style="font-weight:400;font-size:13px;margin-top:2px;">' + esc(c.note) + "</div>" : "") + "</td>" +
-        '<td class="muted">' + esc(c.status) + "</td>" +
-        '<td class="num">' + int(c.impressions) + '</td><td class="num">' + int(c.clicks) + '</td><td class="num">' + pct(ctrC == null ? null : ctrC * 100) +
-        '</td><td class="num">' + money(c.cost) + '</td><td class="num">' + int(c.conversions) + "</td></tr>";
-    }).join("");
 
     $("g-themes-sub").textContent = g.themesNote || "";
     $("g-themes").innerHTML = g.searchThemes.map(function (th) {

@@ -15,7 +15,10 @@
   <header class="hero">
     <div class="wrap">
       <p class="eyebrow eyebrow--light">Lodg × Lean In Digital</p>
-      <h1>Lodg | Ads Performance</h1>
+      <div class="hero__title">
+        <img class="hero__logo" src="assets/lodg-logo-white.svg" alt="Lodg">
+        <span class="hero__title-text">Ads Performance</span>
+      </div>
       <p class="hero__sub" id="hero-sub">Loading the latest figures…</p>
       <div class="hero__meta">
         <span class="pill" id="updated">Data last updated: …</span>
@@ -59,9 +62,9 @@
         <div class="stats" id="stats"></div>
       </section>
 
-      <section class="section" aria-labelledby="funnel-title">
+      <section class="section section--tint" aria-labelledby="funnel-title">
         <p class="eyebrow">The funnel</p>
-        <h2 id="funnel-title">Where results are dropping off</h2>
+        <h2 id="funnel-title">Funnel overview</h2>
         <p class="section__sub">Impressions → link clicks → landing page views → leads, for the period selected above.</p>
         <div class="funnel" id="meta-funnel"></div>
       </section>
@@ -74,7 +77,7 @@
         <p class="fineprint">Meta keeps attributing leads for several days after an ad is seen, so the most recent days can still rise.</p>
       </section>
 
-      <section class="section" aria-labelledby="adsets-title">
+      <section class="section section--tint" aria-labelledby="adsets-title">
         <p class="eyebrow">Ad-set performance</p>
         <h2 id="adsets-title">Video/Reels versus Static</h2>
         <p class="section__sub" id="adsets-sub"></p>
@@ -85,8 +88,11 @@
 
       <section class="section" aria-labelledby="top-title">
         <p class="eyebrow">Top-performing ads</p>
-        <h2 id="top-title">The ads producing leads</h2>
-        <p class="section__sub">Ranked by Meta-reported leads, then cost per lead. Campaign to date.</p>
+        <div class="section__head">
+          <h2 id="top-title">The ads producing leads</h2>
+          <span class="period-pill">Campaign to date</span>
+        </div>
+        <p class="section__sub">Ranked by Meta-reported leads, then cost per lead — across the whole campaign, not the date range above.</p>
         <div class="top-ads" id="top-ads"></div>
         <p class="takeaway" id="creative-note"></p>
       </section>
@@ -135,38 +141,21 @@
 
       <section class="section" aria-labelledby="g-results-title">
         <p class="eyebrow">Campaign data</p>
-        <h2 id="g-results-title">Google Ads overview</h2>
+        <div class="section__head">
+          <h2 id="g-results-title">Google Ads overview</h2>
+          <span class="period-pill" id="g-campaign-pill">Lodg - Leads - Search // LIDM</span>
+        </div>
         <p class="section__sub" id="g-results-sub"></p>
         <div class="kpis" id="g-kpis"></div>
-        <div class="notice notice--info" id="g-tracking-note"></div>
+        <div class="notice notice--info" id="g-new-note" hidden></div>
+        <div class="notice notice--info" id="g-tracking-note" hidden></div>
       </section>
 
-      <section class="section" aria-labelledby="g-funnel-title">
+      <section class="section section--tint" aria-labelledby="g-funnel-title">
         <p class="eyebrow">The funnel</p>
-        <h2 id="g-funnel-title">Where results are dropping off</h2>
-        <p class="section__sub">Impressions → clicks → conversions, last 30 days.</p>
+        <h2 id="g-funnel-title">Funnel overview</h2>
+        <p class="section__sub" id="g-funnel-sub">Impressions → clicks → conversions.</p>
         <div class="funnel" id="google-funnel"></div>
-      </section>
-
-      <section class="section" aria-labelledby="g-campaigns-title">
-        <p class="eyebrow">Campaigns</p>
-        <h2 id="g-campaigns-title">Campaign breakdown</h2>
-        <div class="table-wrap">
-          <table class="table" id="g-campaigns-table">
-            <thead>
-              <tr>
-                <th scope="col">Campaign</th>
-                <th scope="col">Status</th>
-                <th scope="col" class="num">Impressions</th>
-                <th scope="col" class="num">Clicks</th>
-                <th scope="col" class="num">CTR</th>
-                <th scope="col" class="num">Cost</th>
-                <th scope="col" class="num">Conversions</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
       </section>
 
       <section class="section" aria-labelledby="g-themes-title">
@@ -176,7 +165,7 @@
         <div class="themes" id="g-themes"></div>
       </section>
 
-      <section class="section" aria-labelledby="g-keywords-title">
+      <section class="section section--tint" aria-labelledby="g-keywords-title">
         <p class="eyebrow">Keywords</p>
         <h2 id="g-keywords-title">Best keyword performance</h2>
         <p class="section__sub" id="g-keywords-sub"></p>
