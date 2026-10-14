@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Lodg | Meta Ads Performance</title>
+  <title>Lodg | Ads Performance</title>
   <link rel="icon" href="assets/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +15,18 @@
   <header class="hero">
     <div class="wrap">
       <p class="eyebrow eyebrow--light">Lodg × Lean In Digital</p>
-      <h1>Lodg | Meta Ads Performance</h1>
+      <h1>Lodg | Ads Performance</h1>
       <p class="hero__sub" id="hero-sub">Loading the latest figures…</p>
       <div class="hero__meta">
         <span class="pill" id="updated">Data last updated: …</span>
-        <span class="hero__note">All figures NZD · Source: Meta Ads Manager</span>
+        <span class="hero__note">All figures NZD</span>
       </div>
+
+      <div class="platform-tabs" id="platform-tabs" role="tablist" aria-label="Platform">
+        <button type="button" class="platform-tab is-active" data-platform="meta" role="tab" aria-selected="true">Meta</button>
+        <button type="button" class="platform-tab" data-platform="google" role="tab" aria-selected="false">Google Ads</button>
+      </div>
+
       <div class="hero__foot">
         <span class="eyebrow eyebrow--light">Prepared by</span>
         <img src="assets/lid-logo-light.png" alt="Lean In Digital Marketing">
@@ -31,86 +37,175 @@
   <main class="wrap">
     <div class="notice" id="stale" hidden></div>
 
-    <section class="section" aria-labelledby="results-title">
-      <div class="section__head">
-        <div>
-          <p class="eyebrow">Campaign results</p>
-          <h2 id="results-title">Campaign to date</h2>
-          <p class="section__sub" id="results-sub"></p>
+    <!-- ===================== META TAB ===================== -->
+    <div id="panel-meta" class="platform-panel">
+
+      <div class="period-toggle" id="period-toggle" role="tablist" aria-label="Date range">
+        <button type="button" class="period-btn" data-period="last3" role="tab">Last 3 days</button>
+        <button type="button" class="period-btn" data-period="last7" role="tab">Last 7 days</button>
+        <button type="button" class="period-btn" data-period="toDate" role="tab">Campaign to date</button>
+      </div>
+
+      <section class="section" aria-labelledby="results-title">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow">Campaign results</p>
+            <h2 id="results-title">Last 7 days</h2>
+            <p class="section__sub" id="results-sub"></p>
+          </div>
+          <img class="lodg-logo" src="assets/lodg-logo.png" alt="Lodg">
         </div>
-        <img class="lodg-logo" src="assets/lodg-logo.png" alt="Lodg">
-      </div>
-      <div class="kpis" id="kpis"></div>
-      <div class="stats" id="stats"></div>
-    </section>
+        <div class="kpis" id="kpis"></div>
+        <div class="stats" id="stats"></div>
+      </section>
 
-    <section class="section" aria-labelledby="momentum-title">
-      <p class="eyebrow">Momentum</p>
-      <h2 id="momentum-title">Last 7 days</h2>
-      <p class="section__sub" id="momentum-sub"></p>
-      <div class="compare" id="compare"></div>
-      <p class="fineprint">Meta keeps attributing leads for several days after an ad is seen, so the most recent days can still rise.</p>
-    </section>
+      <section class="section" aria-labelledby="funnel-title">
+        <p class="eyebrow">The funnel</p>
+        <h2 id="funnel-title">Where results are dropping off</h2>
+        <p class="section__sub">Impressions → link clicks → landing page views → leads, for the period selected above.</p>
+        <div class="funnel" id="meta-funnel"></div>
+      </section>
 
-    <section class="section" aria-labelledby="adsets-title">
-      <p class="eyebrow">Ad-set performance</p>
-      <h2 id="adsets-title">Video/Reels versus Static</h2>
-      <p class="section__sub" id="adsets-sub"></p>
-      <div class="adsets" id="adsets"></div>
-      <div class="share" id="share"></div>
-      <p class="takeaway" id="adset-takeaway"></p>
-    </section>
+      <section class="section" aria-labelledby="momentum-title">
+        <p class="eyebrow">Momentum</p>
+        <h2 id="momentum-title">Last 7 days</h2>
+        <p class="section__sub" id="momentum-sub"></p>
+        <div class="compare" id="compare"></div>
+        <p class="fineprint">Meta keeps attributing leads for several days after an ad is seen, so the most recent days can still rise.</p>
+      </section>
 
-    <section class="section" aria-labelledby="top-title">
-      <p class="eyebrow">Top-performing ads</p>
-      <h2 id="top-title">The ads producing leads</h2>
-      <p class="section__sub">Ranked by Meta-reported leads, then cost per lead.</p>
-      <div class="top-ads" id="top-ads"></div>
-      <p class="takeaway" id="creative-note"></p>
-    </section>
+      <section class="section" aria-labelledby="adsets-title">
+        <p class="eyebrow">Ad-set performance</p>
+        <h2 id="adsets-title">Video/Reels versus Static</h2>
+        <p class="section__sub" id="adsets-sub"></p>
+        <div class="adsets" id="adsets"></div>
+        <div class="share" id="share"></div>
+        <p class="takeaway" id="adset-takeaway"></p>
+      </section>
 
-    <section class="section" aria-labelledby="all-title">
-      <p class="eyebrow">Every ad</p>
-      <h2 id="all-title">All ads, campaign to date</h2>
-      <div class="table-wrap">
-        <table class="table" id="ads-table">
-          <thead>
-            <tr>
-              <th scope="col">Ad</th>
-              <th scope="col">Ad set</th>
-              <th scope="col" class="num">Spend</th>
-              <th scope="col" class="num">Impressions</th>
-              <th scope="col" class="num">CTR</th>
-              <th scope="col" class="num">Link clicks</th>
-              <th scope="col" class="num">Leads</th>
-              <th scope="col" class="num">Cost per lead</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </section>
+      <section class="section" aria-labelledby="top-title">
+        <p class="eyebrow">Top-performing ads</p>
+        <h2 id="top-title">The ads producing leads</h2>
+        <p class="section__sub">Ranked by Meta-reported leads, then cost per lead. Campaign to date.</p>
+        <div class="top-ads" id="top-ads"></div>
+        <p class="takeaway" id="creative-note"></p>
+      </section>
 
-    <section class="section" aria-labelledby="next-title">
-      <p class="eyebrow">Findings and recommendations</p>
-      <h2 id="next-title">What we do next</h2>
-      <p class="section__sub" id="reviewed"></p>
-      <div class="next">
-        <div class="next__lists">
-          <h3 class="list-title">Findings</h3>
-          <ol class="steps steps--plain" id="findings"></ol>
-          <h3 class="list-title">Next steps</h3>
-          <ol class="steps" id="next-steps"></ol>
+      <section class="section" aria-labelledby="all-title">
+        <p class="eyebrow">Every ad</p>
+        <h2 id="all-title">All ads, campaign to date</h2>
+        <div class="table-wrap">
+          <table class="table" id="ads-table">
+            <thead>
+              <tr>
+                <th scope="col">Ad</th>
+                <th scope="col">Ad set</th>
+                <th scope="col" class="num">Spend</th>
+                <th scope="col" class="num">Impressions</th>
+                <th scope="col" class="num">CTR</th>
+                <th scope="col" class="num">Link clicks</th>
+                <th scope="col" class="num">Leads</th>
+                <th scope="col" class="num">Cost per lead</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
-        <aside class="budget" id="budget" aria-label="Budget"></aside>
-      </div>
-    </section>
+      </section>
+
+      <section class="section" aria-labelledby="next-title">
+        <p class="eyebrow">Findings and recommendations</p>
+        <h2 id="next-title">What we do next</h2>
+        <p class="section__sub" id="reviewed"></p>
+        <div class="next">
+          <div class="next__lists">
+            <h3 class="list-title">Findings</h3>
+            <ol class="steps steps--plain" id="findings"></ol>
+            <h3 class="list-title">Next steps</h3>
+            <ol class="steps" id="next-steps"></ol>
+          </div>
+          <aside class="budget" id="budget" aria-label="Budget"></aside>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ===================== GOOGLE TAB ===================== -->
+    <div id="panel-google" class="platform-panel" hidden>
+
+      <section class="section" aria-labelledby="g-results-title">
+        <p class="eyebrow">Campaign data</p>
+        <h2 id="g-results-title">Google Ads overview</h2>
+        <p class="section__sub" id="g-results-sub"></p>
+        <div class="kpis" id="g-kpis"></div>
+        <div class="notice notice--info" id="g-tracking-note"></div>
+      </section>
+
+      <section class="section" aria-labelledby="g-funnel-title">
+        <p class="eyebrow">The funnel</p>
+        <h2 id="g-funnel-title">Where results are dropping off</h2>
+        <p class="section__sub">Impressions → clicks → conversions, last 30 days.</p>
+        <div class="funnel" id="google-funnel"></div>
+      </section>
+
+      <section class="section" aria-labelledby="g-campaigns-title">
+        <p class="eyebrow">Campaigns</p>
+        <h2 id="g-campaigns-title">Campaign breakdown</h2>
+        <div class="table-wrap">
+          <table class="table" id="g-campaigns-table">
+            <thead>
+              <tr>
+                <th scope="col">Campaign</th>
+                <th scope="col">Status</th>
+                <th scope="col" class="num">Impressions</th>
+                <th scope="col" class="num">Clicks</th>
+                <th scope="col" class="num">CTR</th>
+                <th scope="col" class="num">Cost</th>
+                <th scope="col" class="num">Conversions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="g-themes-title">
+        <p class="eyebrow">Search terms</p>
+        <h2 id="g-themes-title">What people are actually searching</h2>
+        <p class="section__sub" id="g-themes-sub"></p>
+        <div class="themes" id="g-themes"></div>
+      </section>
+
+      <section class="section" aria-labelledby="g-keywords-title">
+        <p class="eyebrow">Keywords</p>
+        <h2 id="g-keywords-title">Best keyword performance</h2>
+        <p class="section__sub" id="g-keywords-sub"></p>
+        <div class="table-wrap">
+          <table class="table" id="g-keywords-table">
+            <thead>
+              <tr>
+                <th scope="col">Keyword</th>
+                <th scope="col">Match type</th>
+                <th scope="col" class="num">Impressions</th>
+                <th scope="col" class="num">Clicks</th>
+                <th scope="col" class="num">CTR</th>
+                <th scope="col" class="num">Cost</th>
+                <th scope="col" class="num">Conversions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
   </main>
 
   <footer class="footer">
     <div class="wrap footer__inner">
       <p id="contact">Questions? Email <a href="mailto:logan@leanindigital.com">logan@leanindigital.com</a></p>
-      <p class="fineprint">Leads are Meta-reported Lead events (pixel), counted when the sign-up email is submitted in the same browser session as the ad click. CTR uses all clicks; link CTR uses link clicks.</p>
+      <p class="fineprint">Leads are Meta-reported Lead events (pixel), counted when the sign-up email is submitted in the same browser session as the ad click. CTR uses all clicks; link CTR uses link clicks. Funnel conversion rates and good/watch/poor indicators are Lean In Digital's own benchmarks, for a quick read only.</p>
     </div>
   </footer>
 

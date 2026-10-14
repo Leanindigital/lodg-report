@@ -15,7 +15,6 @@
   function ratio(a, b) { return b > 0 ? a / b : null; }
 
   function dateLong(iso) {
-    // iso is YYYY-MM-DD in the ad account timezone; render without shifting days
     var p = iso.split("-").map(Number);
     return new Date(Date.UTC(p[0], p[1] - 1, p[2], 12)).toLocaleDateString("en-NZ", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   }
@@ -52,9 +51,39 @@
     };
   }
 
-  // ---------- render ----------
+  // ---------- funnel ----------
+  // stages: [{ label, value, rateLabel, rate, status: 'good'|'watch'|'poor'|null, note }]
+  function renderFunnel(containerId, stages) {
+    var max = Math.max.apply(null, stages.map(function (s) { return s.value || 0; })) || 1;
+    $(containerId).innerHTML = stages.map(function (s, i) {
+      var width = Math.max(6, (s.value / max) * 100);
+      var statusCls = s.status ? " funnel__stage--" + s.status : "";
+      var statusLabel = { good: "On track", watch: "Watch", poor: "Needs attention" }[s.status] || "";
+      return '<div class="funnel__stage">' +
+        '<div class="funnel__bar-wrap"><div class="funnel__bar' + statusCls + '" style="width:' + width.toFixed(1) + '%"></div></div>' +
+        '<div class="funnel__row">' +
+          '<div class="funnel__label">' + esc(s.label) + "</div>" +
+          '<div class="funnel__value">' + int(s.value) + "</div>" +
+          (i > 0 ? '<div class="funnel__rate' + statusCls + '">' + esc(s.rateLabel) + (statusLabel ? ' <span class="funnel__status">' + statusLabel + "</span>" : "") + "</div>" : '<div class="funnel__rate"></div>') +
+        "</div>" +
+        (s.note ? '<div class="funnel__note">' + esc(s.note) + "</div>" : "") +
+        "</div>";
+    }).join("");
+  }
+
+  function rateStatus(rate, good, watch) {
+    // rate in %, good/watch are lower bounds
+    if (rate == null) return null;
+    if (rate >= good) return "good";
+    if (rate >= watch) return "watch";
+    return "poor";
+  }
+
+  // ---------- META TAB ----------
+  var metaData, commentaryData, currentPeriod;
+
   function renderHero(d) {
-    var td = d.toDate;
+    var td = d.periods.toDate;
     var days = daysInclusive(td.since, td.until);
     $("hero-sub").textContent = "Sole Trader Signups campaign · " + dateShort(td.since) + " to " + dateLong(td.until) + " (" + days + " days)";
     $("updated").textContent = "Data last updated: " + timestamp(d.updatedAt);
@@ -67,9 +96,21 @@
     }
   }
 
-  function renderResults(d) {
-    var t = d.toDate.campaignTotals, x = derive(t);
-    $("results-sub").textContent = dateLong(d.toDate.since) + " to " + dateLong(d.toDate.until) + ", " + d.campaign.name;
+  function renderPeriodToggle() {
+    var btns = document.querySelectorAll("#period-toggle .period-btn");
+    btns.forEach(function (b) {
+      b.classList.toggle("is-active", b.dataset.period === currentPeriod);
+      b.addEventListener("click", function () {
+        currentPeriod = b.dataset.period;
+        renderMetaPeriod();
+      });
+    });
+  }
+
+  function renderResults(period) {
+    var t = period.totals, x = derive(t);
+    $("results-title").textContent = period.label;
+    $("results-sub").textContent = dateLong(period.since) + " to " + dateLong(period.until) + ", " + metaData.campaign.name;
 
     var kpis = [
       { v: int(t.leads), l: "Meta-reported leads", primary: true },
@@ -93,6 +134,39 @@
     }).join("");
   }
 
+  function renderMetaFunnel(period) {
+    var t = period.totals;
+    var ctr = ratio(t.linkClicks, t.impressions);
+    var lpvRate = ratio(t.landingPageViews, t.linkClicks);
+    var leadRate = ratio(t.leads, t.landingPageViews);
+    var ctrPct = ctr == null ? null : ctr * 100;
+    var lpvPct = lpvRate == null ? null : lpvRate * 100;
+    var leadPct = leadRate == null ? null : leadRate * 100;
+
+    var stages = [
+      { label: "Impressions", value: t.impressions },
+      {
+        label: "Link clicks", value: t.linkClicks,
+        rateLabel: pct(ctrPct) + " click-through",
+        status: rateStatus(ctrPct, 2, 1),
+        note: ctrPct != null && ctrPct < 1 ? "Low click-through — the ad or audience may need attention before spend." : null
+      },
+      {
+        label: "Landing page views", value: t.landingPageViews,
+        rateLabel: pct(lpvPct) + " of clicks loaded the page",
+        status: rateStatus(lpvPct, 70, 40),
+        note: lpvPct != null && lpvPct < 70 ? "A chunk of clicks aren't reaching the landing page — worth checking load speed or link setup." : null
+      },
+      {
+        label: "Leads", value: t.leads,
+        rateLabel: pct(leadPct) + " of landing page views became a lead",
+        status: rateStatus(leadPct, 3, 1),
+        note: leadPct != null && leadPct < 1 ? "Page is getting seen but not converting — look at the landing page itself, not the ad." : null
+      }
+    ];
+    renderFunnel("meta-funnel", stages);
+  }
+
   function deltaBadge(now, prev, higherIsBetter) {
     if (now == null || prev == null || prev === 0) return '<span class="delta">No comparison</span>';
     var change = ((now - prev) / prev) * 100;
@@ -106,8 +180,8 @@
   }
 
   function renderMomentum(d) {
-    var a = d.last7.totals, b = d.prev7.totals, xa = derive(a), xb = derive(b);
-    $("momentum-sub").textContent = dateShort(d.last7.since) + " to " + dateShort(d.last7.until) + ", compared with " + dateShort(d.prev7.since) + " to " + dateShort(d.prev7.until) + ".";
+    var a = d.momentum.last7.totals, b = d.momentum.prev7.totals, xa = derive(a), xb = derive(b);
+    $("momentum-sub").textContent = dateShort(d.momentum.last7.since) + " to " + dateShort(d.momentum.last7.until) + ", compared with " + dateShort(d.momentum.prev7.since) + " to " + dateShort(d.momentum.prev7.until) + ".";
     var cards = [
       { l: "Spend", now: a.spend, prev: b.spend, fmt: money, better: null },
       { l: "Meta-reported leads", now: a.leads, prev: b.leads, fmt: int, better: true },
@@ -120,14 +194,13 @@
     }).join("");
   }
 
-  function renderAdsets(d, commentary) {
-    var sets = d.toDate.adsets.slice();
+  function renderAdsets(period, commentary) {
+    var sets = period.adsets.slice();
     var totalLeads = sets.reduce(function (s, a) { return s + a.leads; }, 0);
     var spends = sets.map(function (a) { return a.spend; });
     var nearEqual = Math.max.apply(null, spends) <= Math.min.apply(null, spends) * 1.25;
     $("adsets-sub").textContent = sets.length + " ad sets" + (nearEqual ? " on near-equal spend." : ".");
 
-    // The ad set with the most leads gets the blue card
     var leadId = sets.slice().sort(function (a, b) { return b.leads - a.leads || (ratio(a.spend, a.leads) || 1e9) - (ratio(b.spend, b.leads) || 1e9); })[0].id;
 
     $("adsets").innerHTML = sets.map(function (s) {
@@ -152,6 +225,8 @@
       $("share").innerHTML = '<div class="share__labels"><span>Share of the ' + int(totalLeads) + " Meta-reported leads</span><span>" +
         sets.map(function (s) { return esc(s.label) + " " + int(s.leads); }).join(" · ") + "</span></div>" +
         '<div class="share__bar" role="img" aria-label="Lead share by ad set"><span style="width:' + w.toFixed(2) + '%"></span><span style="width:' + (100 - w).toFixed(2) + '%"></span></div>';
+    } else {
+      $("share").innerHTML = "";
     }
 
     if (commentary.adsetTakeaway) {
@@ -166,10 +241,9 @@
   };
 
   function renderAds(d, commentary) {
-    var labels = {};
-    d.toDate.adsets.forEach(function (s) { labels[s.id] = s.label; });
+    var labels = d.adsetLabels;
 
-    var top = d.toDate.ads.filter(function (a) { return a.leads > 0; }).sort(function (a, b) {
+    var top = d.ads.filter(function (a) { return a.leads > 0; }).sort(function (a, b) {
       return b.leads - a.leads || a.spend / a.leads - b.spend / b.leads;
     }).slice(0, 3);
 
@@ -193,7 +267,7 @@
 
     if (commentary.creativeNote) $("creative-note").textContent = commentary.creativeNote;
 
-    var rows = d.toDate.ads.slice().sort(function (a, b) { return b.spend - a.spend; });
+    var rows = d.ads.slice().sort(function (a, b) { return b.spend - a.spend; });
     $("ads-table").querySelector("tbody").innerHTML = rows.map(function (a) {
       var x = derive(a);
       return "<tr><td>" + esc(shortAdName(a.name)) + '</td><td class="muted">' + esc(labels[a.adsetId] || "") + "</td>" +
@@ -221,6 +295,93 @@
     }
   }
 
+  function renderMetaPeriod() {
+    var period = metaData.periods[currentPeriod];
+    document.querySelectorAll("#period-toggle .period-btn").forEach(function (b) {
+      b.classList.toggle("is-active", b.dataset.period === currentPeriod);
+    });
+    renderResults(period);
+    renderMetaFunnel(period);
+    renderAdsets(period, commentaryData);
+  }
+
+  // ---------- GOOGLE TAB ----------
+  function renderGoogle(g) {
+    $("g-results-sub").textContent = g.window.label + " (" + dateLong(g.window.since) + " to " + dateLong(g.window.until) + "), account-wide.";
+    var t = g.totals;
+    var ctr = ratio(t.clicks, t.impressions);
+    var cpc = ratio(t.cost, t.clicks);
+    var kpis = [
+      { v: int(t.impressions), l: "Impressions" },
+      { v: int(t.clicks), l: "Clicks", primary: true },
+      { v: pct(ctr == null ? null : ctr * 100), l: "CTR" },
+      { v: moneyShort(t.cost), l: "Cost", primary: true },
+      { v: money(cpc), l: "Cost per click" },
+      { v: int(t.conversions), l: "Conversions" }
+    ];
+    $("g-kpis").innerHTML = kpis.map(function (k) {
+      return '<div class="kpi' + (k.primary ? " kpi--primary" : "") + '"><div class="kpi__label">' + esc(k.l) + '</div><div class="kpi__value">' + esc(k.v) + "</div></div>";
+    }).join("");
+
+    if (g.trackingNote) {
+      $("g-tracking-note").hidden = false;
+      $("g-tracking-note").textContent = g.trackingNote;
+    }
+
+    var ctrPct = ctr == null ? null : ctr * 100;
+    var convRate = ratio(t.conversions, t.clicks);
+    var convPct = convRate == null ? null : convRate * 100;
+    renderFunnel("google-funnel", [
+      { label: "Impressions", value: t.impressions },
+      {
+        label: "Clicks", value: t.clicks,
+        rateLabel: pct(ctrPct) + " click-through",
+        status: rateStatus(ctrPct, 4, 2)
+      },
+      {
+        label: "Conversions", value: t.conversions,
+        rateLabel: pct(convPct) + " of clicks converted",
+        status: null,
+        note: "Conversion tracking needs fixing on the live campaign (see note above) — treat this stage as directional, not final."
+      }
+    ]);
+
+    $("g-campaigns-table").querySelector("tbody").innerHTML = g.campaigns.map(function (c) {
+      var ctrC = ratio(c.clicks, c.impressions);
+      return "<tr><td>" + esc(c.name) + (c.note ? '<div class="muted" style="font-weight:400;font-size:13px;margin-top:2px;">' + esc(c.note) + "</div>" : "") + "</td>" +
+        '<td class="muted">' + esc(c.status) + "</td>" +
+        '<td class="num">' + int(c.impressions) + '</td><td class="num">' + int(c.clicks) + '</td><td class="num">' + pct(ctrC == null ? null : ctrC * 100) +
+        '</td><td class="num">' + money(c.cost) + '</td><td class="num">' + int(c.conversions) + "</td></tr>";
+    }).join("");
+
+    $("g-themes-sub").textContent = g.themesNote || "";
+    $("g-themes").innerHTML = g.searchThemes.map(function (th) {
+      return '<article class="theme-card"><h3>' + esc(th.theme) + "</h3>" +
+        '<div class="theme-card__stats"><span>' + int(th.clicks) + " clicks</span><span>" + money(th.cost) + "</span><span>" + int(th.conversions) + " conv</span></div>" +
+        '<p class="theme-card__terms">' + th.terms.map(esc).join(" · ") + "</p></article>";
+    }).join("");
+
+    $("g-keywords-sub").textContent = g.keywordsNote || "";
+    $("g-keywords-table").querySelector("tbody").innerHTML = g.topKeywords.map(function (k) {
+      return "<tr><td>" + esc(k.text) + '</td><td class="muted">' + esc(k.matchType) + '</td><td class="num">' + int(k.impressions) +
+        '</td><td class="num">' + int(k.clicks) + '</td><td class="num">' + pct(k.ctr) + '</td><td class="num">' + money(k.cost) +
+        '</td><td class="num">' + int(k.conversions) + "</td></tr>";
+    }).join("");
+  }
+
+  // ---------- platform tabs ----------
+  function setupPlatformTabs() {
+    var tabs = document.querySelectorAll(".platform-tab");
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        tabs.forEach(function (t) { t.classList.toggle("is-active", t === tab); t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
+        var platform = tab.dataset.platform;
+        $("panel-meta").hidden = platform !== "meta";
+        $("panel-google").hidden = platform !== "google";
+      });
+    });
+  }
+
   function load(path) {
     return fetch(path + "?v=" + Date.now(), { cache: "no-store" }).then(function (r) {
       if (!r.ok) throw new Error(path + " returned " + r.status);
@@ -228,14 +389,21 @@
     });
   }
 
-  Promise.all([load("data/report.json"), load("data/commentary.json")]).then(function (res) {
-    var d = res[0], c = res[1];
-    renderHero(d);
-    renderResults(d);
-    renderMomentum(d);
-    renderAdsets(d, c);
-    renderAds(d, c);
-    renderCommentary(c);
+  setupPlatformTabs();
+
+  Promise.all([load("data/report.json"), load("data/commentary.json"), load("data/google.json")]).then(function (res) {
+    metaData = res[0]; commentaryData = res[1];
+    var googleData = res[2];
+    currentPeriod = metaData.defaultPeriod || "last7";
+
+    renderHero(metaData);
+    renderPeriodToggle();
+    renderMetaPeriod();
+    renderMomentum(metaData);
+    renderAds(metaData, commentaryData);
+    renderCommentary(commentaryData);
+
+    renderGoogle(googleData);
   }).catch(function (err) {
     $("hero-sub").textContent = "The latest figures could not be loaded. Please refresh in a minute.";
     console.error(err);

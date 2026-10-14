@@ -1,0 +1,50 @@
+{
+  "updatedAt": "2026-10-14T19:30:00+13:00",
+  "source": "Google Ads (Lodg, customer 3227335237, via Lean In Digital MCC)",
+  "currency": "NZD",
+  "window": { "since": "2026-09-15", "until": "2026-10-14", "label": "Last 30 days" },
+  "trackingNote": "The main sign-up conversion action on this account is flagged misconfigured — only a page-load proxy is currently recording reliably. Conversion counts below are directional, not a confirmed sign-up count, until this is fixed.",
+  "totals": { "impressions": 1721, "clicks": 77, "cost": 461.93, "conversions": 3 },
+  "campaigns": [
+    {
+      "id": "24329610957",
+      "name": "Lodg - Leads - Search // LIDM",
+      "status": "ENABLED",
+      "note": "Current live campaign, started 12 Oct 2026 — still ramping, limited data so far.",
+      "impressions": 250,
+      "clicks": 14,
+      "cost": 35.92,
+      "conversions": 0
+    },
+    {
+      "id": "24283392173",
+      "name": "New Words Campaign",
+      "status": "PAUSED",
+      "note": "Luke's original self-launched test campaign, 25–30 Sept 2026. Paused and replaced by the campaign above.",
+      "impressions": 1471,
+      "clicks": 63,
+      "cost": 426.01,
+      "conversions": 3
+    }
+  ],
+  "searchThemes": [
+    { "theme": "Brand (Lodg)", "terms": ["lodg", "lodg nz", "lodg co nz", "lodg accounting"], "clicks": 22, "impressions": 52, "cost": 145.48, "conversions": 2 },
+    { "theme": "Accountant / local search", "terms": ["accountant near me", "accountants west auckland", "accountant in papatoetoe"], "clicks": 3, "impressions": 5, "cost": 50.48, "conversions": 1 },
+    { "theme": "Accounting software & tools", "terms": ["small business accounting software", "cheap accounting software for small business", "free business accounting app", "accounting app for small business", "xero accounting alternatives", "how does xero work", "kashflow connect"], "clicks": 9, "impressions": 11, "cost": 61.27, "conversions": 0 },
+    { "theme": "Tax & compliance (NZ)", "terms": ["tax for contractors nz", "new zealand gst number example", "new zealand tax agent", "ird myir", "myir", "henry tax nz", "tax agent new zealand", "nz tax", "business tax rate nz", "company tax rate nz 2026"], "clicks": 12, "impressions": 38, "cost": 40.48, "conversions": 0 },
+    { "theme": "Starting a business / funding", "terms": ["$5000 small business grant nz how to apply", "tools for entrepreneurs", "new zealand company register", "business unsecured loans", "how to start a business nz", "nz small business"], "clicks": 6, "impressions": 8, "cost": 28.70, "conversions": 0 },
+    { "theme": "Templates & how-to", "terms": ["free invoice template nz", "how to make a profit and loss statement"], "clicks": 2, "impressions": 3, "cost": 16.92, "conversions": 0 }
+  ],
+  "themesNote": "Grouped from the top search terms by spend over the last 30 days (account-wide, so mostly from the original test campaign, which ran broad-match with no negative keywords — some leakage into generic tax/business terms is expected until negatives are added).",
+  "topKeywords": [
+    { "text": "business accounting", "matchType": "Broad", "impressions": 753, "clicks": 33, "ctr": 4.4, "cost": 245.55, "conversions": 2 },
+    { "text": "tax agent", "matchType": "Broad", "impressions": 120, "clicks": 10, "ctr": 8.3, "cost": 68.86, "conversions": 1 },
+    { "text": "accountant for ltd company", "matchType": "Broad", "impressions": 1, "clicks": 1, "ctr": 100.0, "cost": 25.10, "conversions": 0 },
+    { "text": "tax return agent", "matchType": "Broad", "impressions": 29, "clicks": 5, "ctr": 17.2, "cost": 20.50, "conversions": 0 },
+    { "text": "sole trader accountant", "matchType": "Broad", "impressions": 44, "clicks": 1, "ctr": 2.3, "cost": 17.52, "conversions": 0 },
+    { "text": "business tax accountant", "matchType": "Broad", "impressions": 27, "clicks": 3, "ctr": 11.1, "cost": 15.81, "conversions": 0 },
+    { "text": "small business accounting software", "matchType": "Phrase", "impressions": 111, "clicks": 5, "ctr": 4.5, "cost": 14.60, "conversions": 0 },
+    { "text": "lodg", "matchType": "Exact", "impressions": 11, "clicks": 5, "ctr": 45.5, "cost": 10.40, "conversions": 0 }
+  ],
+  "keywordsNote": "Ranked by spend, account-wide over the last 30 days. \"business accounting\" is the single biggest cost driver and the only keyword with multiple conversions — worth protecting and potentially splitting into its own tighter ad group."
+}
