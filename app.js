@@ -98,7 +98,7 @@
     if (ageHours > STALE_AFTER_HOURS) {
       var n = $("stale");
       n.hidden = false;
-      n.textContent = "Heads up: these figures have not refreshed since " + timestamp(d.updatedAt) + ". Lean In Digital has been notified.";
+      n.textContent = "Heads up: these figures have not refreshed since " + timestamp(d.updatedAt) + ". Use the “Request update” button above to ask Lean In Digital to refresh it.";
     }
   }
 
@@ -315,6 +315,7 @@
   function renderGoogle(g) {
     $("g-campaign-pill").textContent = g.campaign.name;
     $("g-results-sub").textContent = g.window.label + " (" + dateLong(g.window.since) + " to " + dateLong(g.window.until) + ").";
+    $("g-updated").textContent = "Data last updated: " + timestamp(g.updatedAt);
     $("g-funnel-sub").textContent = "Impressions → clicks → conversions, " + g.window.label.toLowerCase() + ".";
     var t = g.totals;
     var ctr = ratio(t.clicks, t.impressions);

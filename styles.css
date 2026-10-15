@@ -66,6 +66,26 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; }
 .hero__foot { margin-top: 44px; }
 .hero__foot img { height: 44px; width: auto; margin-top: 6px; }
 
+.ping-btn {
+  display: inline-block;
+  background: #fff;
+  color: var(--blue, #0b5fff);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.ping-btn:hover { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18); transform: translateY(-1px); }
+
+.pill--muted {
+  background: rgba(11, 95, 255, 0.07);
+  border: 1px solid rgba(11, 95, 255, 0.18);
+  color: #46526b;
+  margin-top: 10px;
+}
+
 /* Sections */
 .section { position: relative; padding: 56px 0 8px; }
 .section + .section { border-top: 1px solid var(--line); margin-top: 48px; }
