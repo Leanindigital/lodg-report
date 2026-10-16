@@ -1,25 +1,123 @@
 {
-  "updatedAt": "2026-10-14T20:15:00+13:00",
+  "updatedAt": "2026-10-16T15:16:00+13:00",
   "source": "Google Ads (Lodg, customer 3227335237, via Lean In Digital MCC)",
   "currency": "NZD",
-  "window": { "since": "2026-10-12", "until": "2026-10-14", "label": "Since launch" },
-  "campaign": { "id": "24329610957", "name": "Lodg - Leads - Search // LIDM", "status": "ENABLED", "launched": "2026-10-12" },
+  "window": {
+    "since": "2026-10-12",
+    "until": "2026-10-15",
+    "label": "Since launch"
+  },
+  "campaign": {
+    "id": "24329610957",
+    "name": "Lodg - Leads - Search // LIDM",
+    "status": "ENABLED",
+    "launched": "2026-10-12"
+  },
   "isNew": true,
-  "newCampaignNote": "This is a brand-new campaign, live for 2 days. Treat these numbers as early signal, not a verdict — there isn't enough data yet to optimise from.",
-  "trackingNote": "The main sign-up conversion action on this account is flagged misconfigured — only a page-load proxy is currently recording reliably. Conversions will read low or zero until this is fixed, regardless of how the campaign is actually performing.",
-  "totals": { "impressions": 250, "clicks": 14, "cost": 35.92, "conversions": 0 },
+  "newCampaignNote": "This is a brand-new campaign, live for 4 days. Treat these numbers as early signal, not a verdict \u2014 there isn't enough data yet to optimise from.",
+  "trackingNote": "The main sign-up conversion action on this account is flagged misconfigured \u2014 only a page-load proxy is currently recording reliably. Conversions will read low or zero until this is fixed, regardless of how the campaign is actually performing.",
+  "totals": {
+    "impressions": 1150,
+    "clicks": 51,
+    "cost": 106.73,
+    "conversions": 0
+  },
   "searchThemes": [
-    { "theme": "Brand (Lodg)", "terms": ["lodg", "lodg co nz"], "clicks": 6, "impressions": 13, "cost": 13.30, "conversions": 0 },
-    { "theme": "Accounting software & tools", "terms": ["how does xero work", "xero accounting alternatives", "kashflow connect"], "clicks": 3, "impressions": 5, "cost": 8.41, "conversions": 0 },
-    { "theme": "Tax & compliance (NZ)", "terms": ["henry tax nz"], "clicks": 1, "impressions": 4, "cost": 3.17, "conversions": 0 }
+    {
+      "theme": "Brand (Lodg)",
+      "terms": [
+        "lodg",
+        "lodg accounting",
+        "lodg co nz"
+      ],
+      "clicks": 13,
+      "impressions": 30,
+      "cost": 30.37,
+      "conversions": 0
+    },
+    {
+      "theme": "Xero comparison",
+      "terms": [
+        "xero monthly fee",
+        "xero alternatives",
+        "how does xero work",
+        "xero basic package"
+      ],
+      "clicks": 6,
+      "impressions": 15,
+      "cost": 18.71,
+      "conversions": 0
+    },
+    {
+      "theme": "Accounting software & tools",
+      "terms": [
+        "double entry accounting software",
+        "kashflow connect",
+        "best cloud based accounting software"
+      ],
+      "clicks": 3,
+      "impressions": 8,
+      "cost": 6.25,
+      "conversions": 0
+    },
+    {
+      "theme": "Tax & compliance (NZ)",
+      "terms": [
+        "henry tax nz"
+      ],
+      "clicks": 1,
+      "impressions": 4,
+      "cost": 3.17,
+      "conversions": 0
+    }
   ],
-  "themesNote": "Every search term that has triggered this campaign so far — it's a small, early sample (2 days live), so treat this as an early read, not a pattern yet.",
+  "themesNote": "Every search term that has spent so far on this campaign, grouped by topic \u2014 still a small, early sample (4 days live), so treat this as an early read, not a pattern yet.",
   "topKeywords": [
-    { "text": "small business accounting software", "matchType": "Phrase", "impressions": 111, "clicks": 5, "ctr": 4.5, "cost": 14.60, "conversions": 0 },
-    { "text": "lodg", "matchType": "Exact", "impressions": 11, "clicks": 5, "ctr": 45.5, "cost": 10.40, "conversions": 0 },
-    { "text": "accounting and tax software", "matchType": "Phrase", "impressions": 89, "clicks": 2, "ctr": 2.2, "cost": 4.84, "conversions": 0 },
-    { "text": "online tax agent", "matchType": "Phrase", "impressions": 2, "clicks": 1, "ctr": 50.0, "cost": 3.17, "conversions": 0 },
-    { "text": "sole trader accounting software", "matchType": "Phrase", "impressions": 2, "clicks": 1, "ctr": 50.0, "cost": 2.91, "conversions": 0 }
+    {
+      "text": "accounting and tax software",
+      "matchType": "Phrase",
+      "impressions": 217,
+      "clicks": 13,
+      "ctr": 6.0,
+      "cost": 39.57,
+      "conversions": 0
+    },
+    {
+      "text": "small business accounting software",
+      "matchType": "Phrase",
+      "impressions": 271,
+      "clicks": 8,
+      "ctr": 3.0,
+      "cost": 25.41,
+      "conversions": 0
+    },
+    {
+      "text": "lodg",
+      "matchType": "Exact",
+      "impressions": 27,
+      "clicks": 11,
+      "ctr": 40.7,
+      "cost": 23.9,
+      "conversions": 0
+    },
+    {
+      "text": "self employed tax accountant",
+      "matchType": "Phrase",
+      "impressions": 5,
+      "clicks": 1,
+      "ctr": 20.0,
+      "cost": 3.46,
+      "conversions": 0
+    },
+    {
+      "text": "online tax agent",
+      "matchType": "Phrase",
+      "impressions": 4,
+      "clicks": 1,
+      "ctr": 25.0,
+      "cost": 3.17,
+      "conversions": 0
+    }
   ],
-  "keywordsNote": "All 5 keywords that have spent so far on this campaign, ranked by spend. All phrase or exact match — tighter than the account's original test campaign, which was broad match only."
+  "keywordsNote": "Top 5 keywords by spend on this campaign. All phrase or exact match \u2014 tighter than the account's original test campaign, which was broad match only."
 }

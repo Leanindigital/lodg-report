@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-14T19:30:00+13:00",
+  "updatedAt": "2026-10-16T15:16:00+13:00",
   "source": "Meta Ads Manager (Lodg ads, act_845136617574788)",
   "currency": "NZD",
   "campaign": {
@@ -10,53 +10,296 @@
   "periods": {
     "last3": {
       "label": "Last 3 days",
-      "since": "2026-10-12",
-      "until": "2026-10-14",
-      "totals": { "impressions": 11288, "clicks": 327, "linkClicks": 166, "landingPageViews": 136, "leads": 5, "registrations": 2, "spend": 322.21 },
+      "since": "2026-10-13",
+      "until": "2026-10-15",
+      "totals": {
+        "impressions": 12969,
+        "clicks": 405,
+        "linkClicks": 224,
+        "landingPageViews": 177,
+        "leads": 7,
+        "registrations": 3,
+        "spend": 370.84
+      },
       "adsets": [
-        { "id": "120251238096080660", "label": "Video/Reels", "impressions": 8092, "clicks": 244, "linkClicks": 134, "landingPageViews": 113, "leads": 4, "registrations": 1, "spend": 196.41 },
-        { "id": "120251376213170660", "label": "Static", "impressions": 3196, "clicks": 83, "linkClicks": 32, "landingPageViews": 23, "leads": 1, "registrations": 1, "spend": 125.80 }
+        {
+          "id": "120251238096080660",
+          "label": "Video/Reels",
+          "impressions": 9725,
+          "clicks": 330,
+          "linkClicks": 190,
+          "landingPageViews": 152,
+          "leads": 5,
+          "registrations": 2,
+          "spend": 248.52
+        },
+        {
+          "id": "120251376213170660",
+          "label": "Static",
+          "impressions": 3244,
+          "clicks": 75,
+          "linkClicks": 34,
+          "landingPageViews": 25,
+          "leads": 2,
+          "registrations": 1,
+          "spend": 122.32
+        }
       ]
     },
     "last7": {
       "label": "Last 7 days",
-      "since": "2026-10-08",
-      "until": "2026-10-14",
-      "totals": { "impressions": 27382, "clicks": 815, "linkClicks": 428, "landingPageViews": 359, "leads": 8, "registrations": 4, "spend": 775.46 },
+      "since": "2026-10-09",
+      "until": "2026-10-15",
+      "totals": {
+        "impressions": 30200,
+        "clicks": 920,
+        "linkClicks": 495,
+        "landingPageViews": 403,
+        "leads": 11,
+        "registrations": 4,
+        "spend": 862.0
+      },
       "adsets": [
-        { "id": "120251238096080660", "label": "Video/Reels", "impressions": 19624, "clicks": 610, "linkClicks": 344, "landingPageViews": 295, "leads": 7, "registrations": 3, "spend": 468.51 },
-        { "id": "120251376213170660", "label": "Static", "impressions": 7758, "clicks": 205, "linkClicks": 84, "landingPageViews": 64, "leads": 1, "registrations": 1, "spend": 306.95 }
+        {
+          "id": "120251238096080660",
+          "label": "Video/Reels",
+          "impressions": 22234,
+          "clicks": 705,
+          "linkClicks": 400,
+          "landingPageViews": 332,
+          "leads": 9,
+          "registrations": 3,
+          "spend": 548.32
+        },
+        {
+          "id": "120251376213170660",
+          "label": "Static",
+          "impressions": 7966,
+          "clicks": 215,
+          "linkClicks": 95,
+          "landingPageViews": 71,
+          "leads": 2,
+          "registrations": 1,
+          "spend": 313.68
+        }
       ]
     },
     "toDate": {
       "label": "Campaign to date",
       "since": "2026-09-26",
-      "until": "2026-10-14",
-      "totals": { "impressions": 63753, "clicks": 2025, "linkClicks": 1085, "landingPageViews": 909, "leads": 19, "registrations": 4, "spend": 1690.11 },
+      "until": "2026-10-15",
+      "totals": {
+        "impressions": 69657,
+        "clicks": 2225,
+        "linkClicks": 1208,
+        "landingPageViews": 1004,
+        "leads": 23,
+        "registrations": 5,
+        "spend": 1859.99
+      },
       "adsets": [
-        { "id": "120251238096080660", "label": "Video/Reels", "impressions": 42153, "clicks": 1408, "linkClicks": 839, "landingPageViews": 705, "leads": 14, "registrations": 3, "spend": 942.31 },
-        { "id": "120251376213170660", "label": "Static", "impressions": 21600, "clicks": 617, "linkClicks": 246, "landingPageViews": 204, "leads": 5, "registrations": 1, "spend": 747.80 }
+        {
+          "id": "120251238096080660",
+          "label": "Video/Reels",
+          "impressions": 46882,
+          "clicks": 1583,
+          "linkClicks": 947,
+          "landingPageViews": 789,
+          "leads": 17,
+          "registrations": 4,
+          "spend": 1067.91
+        },
+        {
+          "id": "120251376213170660",
+          "label": "Static",
+          "impressions": 22775,
+          "clicks": 642,
+          "linkClicks": 261,
+          "landingPageViews": 215,
+          "leads": 6,
+          "registrations": 1,
+          "spend": 792.08
+        }
       ]
     }
   },
   "defaultPeriod": "last7",
   "momentum": {
-    "last7": { "since": "2026-10-08", "until": "2026-10-14", "totals": { "impressions": 27382, "clicks": 815, "linkClicks": 428, "landingPageViews": 359, "leads": 8, "registrations": 4, "spend": 775.46 } },
-    "prev7": { "since": "2026-10-01", "until": "2026-10-07", "totals": { "impressions": 24830, "clicks": 757, "linkClicks": 425, "landingPageViews": 359, "leads": 9, "registrations": 0, "spend": 576.65 } }
+    "last7": {
+      "since": "2026-10-09",
+      "until": "2026-10-15",
+      "totals": {
+        "impressions": 30200,
+        "clicks": 920,
+        "linkClicks": 495,
+        "landingPageViews": 403,
+        "leads": 11,
+        "registrations": 4,
+        "spend": 862.0
+      }
+    },
+    "prev7": {
+      "since": "2026-10-02",
+      "until": "2026-10-08",
+      "totals": {
+        "impressions": 26298,
+        "clicks": 786,
+        "linkClicks": 451,
+        "landingPageViews": 384,
+        "leads": 7,
+        "registrations": 1,
+        "spend": 605.97
+      }
+    }
   },
-  "adsetLabels": { "120251238096080660": "Video/Reels", "120251376213170660": "Static" },
+  "adsetLabels": {
+    "120251238096080660": "Video/Reels",
+    "120251376213170660": "Static"
+  },
   "ads": [
-    { "id": "120251238096070660", "adsetId": "120251238096080660", "name": "Ad #1 - I found a tool", "impressions": 96, "clicks": 1, "linkClicks": 1, "landingPageViews": 0, "leads": 0, "registrations": 0, "spend": 3.57 },
-    { "id": "120251375340930660", "adsetId": "120251238096080660", "name": "Ad #6 - Refunding Users", "impressions": 11837, "clicks": 396, "linkClicks": 248, "landingPageViews": 204, "leads": 7, "registrations": 3, "spend": 242.14 },
-    { "id": "120251375340940660", "adsetId": "120251238096080660", "name": "Ad #5- Traditional Accounting", "impressions": 3400, "clicks": 81, "linkClicks": 45, "landingPageViews": 37, "leads": 0, "registrations": 0, "spend": 109.87 },
-    { "id": "120251375340960660", "adsetId": "120251238096080660", "name": "Ad #4 - Why tax is so confusing", "impressions": 14969, "clicks": 479, "linkClicks": 263, "landingPageViews": 233, "leads": 1, "registrations": 0, "spend": 308.04 },
-    { "id": "120251375340970660", "adsetId": "120251238096080660", "name": "Ad #3 - \"i still get my wife to do it\"", "impressions": 10395, "clicks": 395, "linkClicks": 246, "landingPageViews": 204, "leads": 6, "registrations": 0, "spend": 218.62 },
-    { "id": "120251375340980660", "adsetId": "120251238096080660", "name": "Ad #2 - Xero has 5 less customers", "impressions": 1456, "clicks": 56, "linkClicks": 36, "landingPageViews": 27, "leads": 0, "registrations": 0, "spend": 60.07 },
-    { "id": "120251376213210660", "adsetId": "120251376213170660", "name": "Ad #1 - Get paid. Tax gone.", "impressions": 827, "clicks": 16, "linkClicks": 6, "landingPageViews": 5, "leads": 0, "registrations": 0, "spend": 34.12 },
-    { "id": "120251376356180660", "adsetId": "120251376213170660", "name": "Ad #4 - commission lands", "impressions": 416, "clicks": 19, "linkClicks": 7, "landingPageViews": 6, "leads": 0, "registrations": 0, "spend": 11.37 },
-    { "id": "120251376356190660", "adsetId": "120251376213170660", "name": "Ad #3 - Tax returns.png", "impressions": 1922, "clicks": 42, "linkClicks": 8, "landingPageViews": 8, "leads": 0, "registrations": 0, "spend": 50.98 },
-    { "id": "120251376356200660", "adsetId": "120251376213170660", "name": "Ad #6 - The usual way", "impressions": 129, "clicks": 5, "linkClicks": 2, "landingPageViews": 1, "leads": 0, "registrations": 0, "spend": 4.23 },
-    { "id": "120251376356210660", "adsetId": "120251376213170660", "name": "Ad #2 - How Lodg Works", "impressions": 697, "clicks": 9, "linkClicks": 4, "landingPageViews": 8, "leads": 0, "registrations": 0, "spend": 29.25 },
-    { "id": "120251376356230660", "adsetId": "120251376213170660", "name": "Ad #5 - $47+gst", "impressions": 17609, "clicks": 526, "linkClicks": 219, "landingPageViews": 176, "leads": 5, "registrations": 1, "spend": 617.90 }
+    {
+      "id": "120251238096070660",
+      "adsetId": "120251238096080660",
+      "name": "Ad #1 - I found a tool",
+      "impressions": 129,
+      "clicks": 3,
+      "linkClicks": 3,
+      "landingPageViews": 2,
+      "leads": 0,
+      "registrations": 0,
+      "spend": 4.6
+    },
+    {
+      "id": "120251375340930660",
+      "adsetId": "120251238096080660",
+      "name": "Ad #6 - Refunding Users",
+      "impressions": 12639,
+      "clicks": 446,
+      "linkClicks": 284,
+      "landingPageViews": 231,
+      "leads": 8,
+      "registrations": 3,
+      "spend": 261.62
+    },
+    {
+      "id": "120251375340940660",
+      "adsetId": "120251238096080660",
+      "name": "Ad #5- Traditional Accounting",
+      "impressions": 4027,
+      "clicks": 92,
+      "linkClicks": 53,
+      "landingPageViews": 42,
+      "leads": 0,
+      "registrations": 0,
+      "spend": 131.77
+    },
+    {
+      "id": "120251375340960660",
+      "adsetId": "120251238096080660",
+      "name": "Ad #4 - Why tax is so confusing",
+      "impressions": 16383,
+      "clicks": 535,
+      "linkClicks": 287,
+      "landingPageViews": 251,
+      "leads": 3,
+      "registrations": 1,
+      "spend": 343.65
+    },
+    {
+      "id": "120251375340970660",
+      "adsetId": "120251238096080660",
+      "name": "Ad #3 - \"i still get my wife to do it\"",
+      "impressions": 11586,
+      "clicks": 437,
+      "linkClicks": 274,
+      "landingPageViews": 228,
+      "leads": 6,
+      "registrations": 0,
+      "spend": 243.63
+    },
+    {
+      "id": "120251375340980660",
+      "adsetId": "120251238096080660",
+      "name": "Ad #2 - Xero has 5 less customers",
+      "impressions": 2118,
+      "clicks": 70,
+      "linkClicks": 46,
+      "landingPageViews": 35,
+      "leads": 0,
+      "registrations": 0,
+      "spend": 82.64
+    },
+    {
+      "id": "120251376213210660",
+      "adsetId": "120251376213170660",
+      "name": "Ad #1 - Get paid. Tax gone.",
+      "impressions": 904,
+      "clicks": 17,
+      "linkClicks": 7,
+      "landingPageViews": 6,
+      "leads": 0,
+      "registrations": 0,
+      "spend": 40.78
+    },
+    {
+      "id": "120251376356180660",
+      "adsetId": "120251376213170660",
+      "name": "Ad #4 - commission lands",
+      "impressions": 416,
+      "clicks": 19,
+      "linkClicks": 7,
+      "landingPageViews": 6,
+      "leads": 0,
+      "registrations": 0,
+      "spend": 11.37
+    },
+    {
+      "id": "120251376356190660",
+      "adsetId": "120251376213170660",
+      "name": "Ad #3 - Tax returns.png",
+      "impressions": 2025,
+      "clicks": 43,
+      "linkClicks": 8,
+      "landingPageViews": 8,
+      "leads": 0,
+      "registrations": 0,
+      "spend": 53.72
+    },
+    {
+      "id": "120251376356200660",
+      "adsetId": "120251376213170660",
+      "name": "Ad #6 - The usual way",
+      "impressions": 129,
+      "clicks": 5,
+      "linkClicks": 2,
+      "landingPageViews": 1,
+      "leads": 0,
+      "registrations": 0,
+      "spend": 4.23
+    },
+    {
+      "id": "120251376356210660",
+      "adsetId": "120251376213170660",
+      "name": "Ad #2 - How Lodg Works",
+      "impressions": 716,
+      "clicks": 9,
+      "linkClicks": 4,
+      "landingPageViews": 8,
+      "leads": 0,
+      "registrations": 0,
+      "spend": 30.21
+    },
+    {
+      "id": "120251376356230660",
+      "adsetId": "120251376213170660",
+      "name": "Ad #5 - $47+gst",
+      "impressions": 18585,
+      "clicks": 549,
+      "linkClicks": 233,
+      "landingPageViews": 186,
+      "leads": 6,
+      "registrations": 1,
+      "spend": 651.77
+    }
   ]
 }
