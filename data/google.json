@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-10-16T15:16:00+13:00",
+  "updatedAt": "2026-10-17T15:13:53+13:00",
   "source": "Google Ads (Lodg, customer 3227335237, via Lean In Digital MCC)",
   "currency": "NZD",
   "window": {
     "since": "2026-10-12",
-    "until": "2026-10-15",
+    "until": "2026-10-16",
     "label": "Since launch"
   },
   "campaign": {
@@ -14,12 +14,12 @@
     "launched": "2026-10-12"
   },
   "isNew": true,
-  "newCampaignNote": "This is a brand-new campaign, live for 4 days. Treat these numbers as early signal, not a verdict \u2014 there isn't enough data yet to optimise from.",
-  "trackingNote": "The main sign-up conversion action on this account is flagged misconfigured \u2014 only a page-load proxy is currently recording reliably. Conversions will read low or zero until this is fixed, regardless of how the campaign is actually performing.",
+  "newCampaignNote": "This is a new campaign, live for 5 complete days (12–16 October). Treat these numbers as an early signal, not a verdict — there isn't enough data yet to optimise from.",
+  "trackingNote": "The main sign-up conversion action on this account is flagged misconfigured — only a page-load proxy is currently recording reliably. Conversions will read low or zero until this is fixed, regardless of how the campaign is actually performing.",
   "totals": {
-    "impressions": 1150,
-    "clicks": 51,
-    "cost": 106.73,
+    "impressions": 1674,
+    "clicks": 62,
+    "cost": 127.55,
     "conversions": 0
   },
   "searchThemes": [
@@ -71,33 +71,33 @@
       "conversions": 0
     }
   ],
-  "themesNote": "Every search term that has spent so far on this campaign, grouped by topic \u2014 still a small, early sample (4 days live), so treat this as an early read, not a pattern yet.",
+  "themesNote": "Search-term sample last refreshed through 16 October; grouped by topic. This is still a small, early sample, so treat it as an early read rather than a settled pattern.",
   "topKeywords": [
     {
       "text": "accounting and tax software",
       "matchType": "Phrase",
-      "impressions": 217,
-      "clicks": 13,
-      "ctr": 6.0,
-      "cost": 39.57,
-      "conversions": 0
-    },
-    {
-      "text": "small business accounting software",
-      "matchType": "Phrase",
-      "impressions": 271,
-      "clicks": 8,
-      "ctr": 3.0,
-      "cost": 25.41,
+      "impressions": 232,
+      "clicks": 11,
+      "ctr": 4.7,
+      "cost": 42.85,
       "conversions": 0
     },
     {
       "text": "lodg",
       "matchType": "Exact",
-      "impressions": 27,
-      "clicks": 11,
-      "ctr": 40.7,
-      "cost": 23.9,
+      "impressions": 35,
+      "clicks": 16,
+      "ctr": 45.7,
+      "cost": 36.0,
+      "conversions": 0
+    },
+    {
+      "text": "small business accounting software",
+      "matchType": "Phrase",
+      "impressions": 286,
+      "clicks": 8,
+      "ctr": 2.8,
+      "cost": 25.41,
       "conversions": 0
     },
     {
@@ -112,12 +112,12 @@
     {
       "text": "online tax agent",
       "matchType": "Phrase",
-      "impressions": 4,
+      "impressions": 2,
       "clicks": 1,
-      "ctr": 25.0,
+      "ctr": 50.0,
       "cost": 3.17,
       "conversions": 0
     }
   ],
-  "keywordsNote": "Top 5 keywords by spend on this campaign. All phrase or exact match \u2014 tighter than the account's original test campaign, which was broad match only."
+  "keywordsNote": "Top five keywords by spend through 16 October. These are current keyword performance totals; all listed keywords are phrase or exact match."
 }
