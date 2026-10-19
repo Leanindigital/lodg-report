@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-10-17T15:13:53+13:00",
+  "updatedAt": "2026-10-19T13:35:55+13:00",
   "source": "Google Ads (Lodg, customer 3227335237, via Lean In Digital MCC)",
   "currency": "NZD",
   "window": {
     "since": "2026-10-12",
-    "until": "2026-10-16",
+    "until": "2026-10-18",
     "label": "Since launch"
   },
   "campaign": {
@@ -14,12 +14,12 @@
     "launched": "2026-10-12"
   },
   "isNew": true,
-  "newCampaignNote": "This is a new campaign, live for 5 complete days (12–16 October). Treat these numbers as an early signal, not a verdict — there isn't enough data yet to optimise from.",
+  "newCampaignNote": "This is a new campaign, live from 12 October 2026. Treat these numbers as an early signal, not a verdict — there is not enough data yet to optimise from.",
   "trackingNote": "The main sign-up conversion action on this account is flagged misconfigured — only a page-load proxy is currently recording reliably. Conversions will read low or zero until this is fixed, regardless of how the campaign is actually performing.",
   "totals": {
-    "impressions": 1674,
-    "clicks": 62,
-    "cost": 127.55,
+    "impressions": 3870,
+    "clicks": 106,
+    "cost": 159.98,
     "conversions": 0
   },
   "searchThemes": [
@@ -71,7 +71,7 @@
       "conversions": 0
     }
   ],
-  "themesNote": "Search-term sample last refreshed through 16 October; grouped by topic. This is still a small, early sample, so treat it as an early read rather than a settled pattern.",
+  "themesNote": "Search-term rows include data through 18 October where available; the previously grouped sample is retained for continuity and is not a complete query inventory.",
   "topKeywords": [
     {
       "text": "accounting and tax software",
@@ -88,7 +88,7 @@
       "impressions": 35,
       "clicks": 16,
       "ctr": 45.7,
-      "cost": 36.0,
+      "cost": 36,
       "conversions": 0
     },
     {
@@ -105,7 +105,7 @@
       "matchType": "Phrase",
       "impressions": 5,
       "clicks": 1,
-      "ctr": 20.0,
+      "ctr": 20,
       "cost": 3.46,
       "conversions": 0
     },
@@ -114,10 +114,10 @@
       "matchType": "Phrase",
       "impressions": 2,
       "clicks": 1,
-      "ctr": 50.0,
+      "ctr": 50,
       "cost": 3.17,
       "conversions": 0
     }
   ],
-  "keywordsNote": "Top five keywords by spend through 16 October. These are current keyword performance totals; all listed keywords are phrase or exact match."
+  "keywordsNote": "Top five keyword details remain refreshed through 16 October; campaign-level totals above are updated through 18 October."
 }
