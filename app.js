@@ -119,8 +119,8 @@
     $("results-sub").textContent = dateLong(period.since) + " to " + dateLong(period.until) + ", " + metaData.campaign.name;
 
     var kpis = [
-      { v: int(t.leads), l: 'Results in Meta Ads Manager ("Lead" event)', primary: true },
-      { v: money(x.cpl), l: "Cost per Meta-reported lead", primary: true },
+      { v: int(t.leads), l: "Results", primary: true },
+      { v: money(x.cpl), l: "Cost per result", primary: true },
       { v: moneyShort(t.spend), l: "Spend" }
     ];
     $("kpis").innerHTML = kpis.map(function (k) {
@@ -190,7 +190,7 @@
     $("momentum-sub").textContent = dateShort(d.momentum.last7.since) + " to " + dateShort(d.momentum.last7.until) + ", compared with " + dateShort(d.momentum.prev7.since) + " to " + dateShort(d.momentum.prev7.until) + ".";
     var cards = [
       { l: "Spend", now: a.spend, prev: b.spend, fmt: money, better: null },
-      { l: 'Meta Results ("Lead" event)', now: a.leads, prev: b.leads, fmt: int, better: true },
+      { l: "Results", now: a.leads, prev: b.leads, fmt: int, better: true },
       { l: "Cost per lead", now: xa.cpl, prev: xb.cpl, fmt: money, better: false },
       { l: "Link clicks", now: a.linkClicks, prev: b.linkClicks, fmt: int, better: true }
     ];
@@ -214,7 +214,7 @@
       return '<article class="adset' + (s.id === leadId ? " adset--lead" : "") + '">' +
         '<div class="adset__eyebrow">Ad set</div><h3>' + esc(s.label) + "</h3>" +
         '<div class="adset__main">' +
-          '<div><div class="v">' + int(s.leads) + '</div><div class="l">Meta Results ("Lead" event)</div></div>' +
+          '<div><div class="v">' + int(s.leads) + '</div><div class="l">Results</div></div>' +
           '<div><div class="v">' + money(x.cpl) + '</div><div class="l">Cost per lead</div></div>' +
           '<div><div class="v">' + money(s.spend) + '</div><div class="l">Spend</div></div>' +
         "</div>" +
@@ -228,7 +228,7 @@
 
     if (totalLeads > 0 && sets.length === 2) {
       var w = (sets[0].leads / totalLeads) * 100;
-      $("share").innerHTML = '<div class="share__labels"><span>Share of the ' + int(totalLeads) + " Meta-reported leads</span><span>" +
+      $("share").innerHTML = '<div class="share__labels"><span>Share of the ' + int(totalLeads) + " Results</span><span>" +
         sets.map(function (s) { return esc(s.label) + " " + int(s.leads); }).join(" · ") + "</span></div>" +
         '<div class="share__bar" role="img" aria-label="Lead share by ad set"><span style="width:' + w.toFixed(2) + '%"></span><span style="width:' + (100 - w).toFixed(2) + '%"></span></div>';
     } else {
