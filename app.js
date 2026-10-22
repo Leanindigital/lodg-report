@@ -119,7 +119,7 @@
     $("results-sub").textContent = dateLong(period.since) + " to " + dateLong(period.until) + ", " + metaData.campaign.name;
 
     var kpis = [
-      { v: int(t.leads), l: "Meta-reported leads", primary: true },
+      { v: int(t.leads), l: 'Results in Meta Ads Manager ("Lead" event)', primary: true },
       { v: money(x.cpl), l: "Cost per Meta-reported lead", primary: true },
       { v: moneyShort(t.spend), l: "Spend" }
     ];
@@ -190,7 +190,7 @@
     $("momentum-sub").textContent = dateShort(d.momentum.last7.since) + " to " + dateShort(d.momentum.last7.until) + ", compared with " + dateShort(d.momentum.prev7.since) + " to " + dateShort(d.momentum.prev7.until) + ".";
     var cards = [
       { l: "Spend", now: a.spend, prev: b.spend, fmt: money, better: null },
-      { l: "Meta-reported leads", now: a.leads, prev: b.leads, fmt: int, better: true },
+      { l: 'Meta Results ("Lead" event)', now: a.leads, prev: b.leads, fmt: int, better: true },
       { l: "Cost per lead", now: xa.cpl, prev: xb.cpl, fmt: money, better: false },
       { l: "Link clicks", now: a.linkClicks, prev: b.linkClicks, fmt: int, better: true }
     ];
@@ -214,7 +214,7 @@
       return '<article class="adset' + (s.id === leadId ? " adset--lead" : "") + '">' +
         '<div class="adset__eyebrow">Ad set</div><h3>' + esc(s.label) + "</h3>" +
         '<div class="adset__main">' +
-          '<div><div class="v">' + int(s.leads) + '</div><div class="l">Meta-reported leads</div></div>' +
+          '<div><div class="v">' + int(s.leads) + '</div><div class="l">Meta Results ("Lead" event)</div></div>' +
           '<div><div class="v">' + money(x.cpl) + '</div><div class="l">Cost per lead</div></div>' +
           '<div><div class="v">' + money(s.spend) + '</div><div class="l">Spend</div></div>' +
         "</div>" +

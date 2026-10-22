@@ -15,7 +15,7 @@ A scheduled agent runs at 7:00am NZ time. It pulls campaign-to-date (26 Sep 2026
 
 ## Definitions
 
-- Leads: Meta `lead` action (pixel Lead event). Not reconciled with Lodg's registrations.
+- Meta Ads Manager Results: Meta `lead` action (pixel Lead event), matching the Results action reported for this Leads campaign. This is not the same as Lodg registrations or Meta `complete_registration`.
 - Registrations: Meta `complete_registration` action.
 - Clicks: all clicks. Link clicks: `inline_link_clicks`. Landing-page views: `landing_page_view` action.
 - Figures use each ad set's own attribution setting, matching Ads Manager.
