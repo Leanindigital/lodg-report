@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T19:30:17+13:00",
+  "updatedAt": "2026-10-26T12:58:38+13:00",
   "source": "Meta Ads Manager (Lodg ads, act_845136617574788)",
   "currency": "NZD",
   "campaign": {
@@ -48,39 +48,39 @@
     },
     "last7": {
       "label": "Last 7 days",
-      "since": "2026-10-16",
-      "until": "2026-10-22",
+      "since": "2026-10-19",
+      "until": "2026-10-25",
       "totals": {
-        "impressions": 30054,
-        "clicks": 1396,
-        "linkClicks": 873,
-        "landingPageViews": 696,
-        "leads": 6,
+        "impressions": 31806,
+        "clicks": 1664,
+        "linkClicks": 1056,
+        "landingPageViews": 816,
+        "leads": 9,
         "registrations": 5,
-        "spend": 856.03
+        "spend": 892.22
       },
       "adsets": [
         {
           "id": "120251238096080660",
           "label": "Video/Reels",
-          "impressions": 23626,
-          "clicks": 1219,
-          "linkClicks": 798,
-          "landingPageViews": 637,
-          "leads": 5,
+          "impressions": 23989,
+          "clicks": 1439,
+          "linkClicks": 951,
+          "landingPageViews": 745,
+          "leads": 6,
           "registrations": 3,
-          "spend": 637.67
+          "spend": 658.91
         },
         {
           "id": "120251376213170660",
           "label": "Static",
-          "impressions": 6428,
-          "clicks": 177,
-          "linkClicks": 75,
-          "landingPageViews": 59,
-          "leads": 1,
+          "impressions": 7817,
+          "clicks": 225,
+          "linkClicks": 105,
+          "landingPageViews": 71,
+          "leads": 3,
           "registrations": 2,
-          "spend": 218.36
+          "spend": 233.31
         }
       ]
     },
@@ -126,29 +126,29 @@
   "defaultPeriod": "last7",
   "momentum": {
     "last7": {
-      "since": "2026-10-16",
-      "until": "2026-10-22",
+      "since": "2026-10-19",
+      "until": "2026-10-25",
       "totals": {
-        "impressions": 30054,
-        "clicks": 1396,
-        "linkClicks": 873,
-        "landingPageViews": 696,
-        "leads": 6,
+        "impressions": 31806,
+        "clicks": 1664,
+        "linkClicks": 1056,
+        "landingPageViews": 816,
+        "leads": 9,
         "registrations": 5,
-        "spend": 856.03
+        "spend": 892.22
       }
     },
     "prev7": {
-      "since": "2026-10-09",
-      "until": "2026-10-15",
+      "since": "2026-10-12",
+      "until": "2026-10-18",
       "totals": {
-        "impressions": 30202,
-        "clicks": 920,
-        "linkClicks": 495,
-        "landingPageViews": 403,
-        "leads": 11,
+        "impressions": 27653,
+        "clicks": 813,
+        "linkClicks": 430,
+        "landingPageViews": 353,
+        "leads": 10,
         "registrations": 4,
-        "spend": 862.06
+        "spend": 824.18
       }
     }
   },
