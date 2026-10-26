@@ -290,7 +290,7 @@
     $("findings").innerHTML = items(c.findings);
     $("next-steps").innerHTML = items(c.nextSteps);
     if (c.budget && c.budget.length) {
-      $("budget").innerHTML = '<p class="budget__title">Budget headroom</p>' + c.budget.map(function (b) {
+      $("budget").innerHTML = '<p class="budget__title">Budget plan</p>' + c.budget.map(function (b) {
         return '<div class="budget__item"><div class="v">' + esc(b.value) + '</div><div class="l">' + esc(b.label) + "</div></div>";
       }).join("");
     } else {

@@ -1,43 +1,46 @@
 {
-  "reviewedOn": "2026-10-13",
-  "reviewedBy": "Logan, Lean In Digital",
+  "reviewedOn": "2026-10-26",
   "contactEmail": "logan@leanindigital.com",
-  "adsetTakeaway": "Video/Reels has produced most of the reported leads at a materially lower cost per lead. Static still contributes leads through the $47+gst ad and should not be dismissed.",
-  "creativeNote": "The natural, personality-led video content is also the strongest paid performer so far. Keep creating and sharing authentic, useful organic content. Paid spend can then take the strongest ideas further, while the results show which messages deserve more creative variations.",
+  "adsetTakeaway": "For 19–25 October, Video/Reels delivered 6 of 9 Meta-reported leads, but Static delivered 3 leads and 2 of 5 reported registrations. Keep both in the mix while the new ads gather more evidence.",
+  "creativeNote": "The refreshed ads went live around 19–20 October. The Refunding Users repost brought volume and inexpensive visits, while the IRD Letter static also produced leads. Judge the next creative round on registrations and eventual activations, not clicks alone.",
   "findings": [
     {
-      "title": "Video/Reels is leading",
-      "body": "Video/Reels has generated the majority of Meta-reported leads with a lower cost per lead than Static."
+      "title": "New creative is live",
+      "body": "The refreshed Video/Reels and Static ads launched around 19–20 October. In 19–25 October, the Refunding Users repost recorded 4 leads on about NZ$332 spend; the IRD Letter static recorded 2 leads on about NZ$109. Several newer variants have had too little spend to judge yet."
     },
     {
-      "title": "A few ads are doing the work",
-      "body": "Refunding Users, 'i still get my wife to do it' and $47+gst account for nearly every reported lead. Other ads have had little spend, so it is too early to call them failures."
+      "title": "Volume improved, but leads did not",
+      "body": "Compared with 12–18 October, 19–25 October generated 816 landing-page views versus 353, while reported leads moved from 10 to 9. Spend rose from about NZ$824 to NZ$892. More traffic has not yet translated into more leads."
+    },
+    {
+      "title": "Static is contributing to registrations",
+      "body": "Video/Reels delivered 6 leads and 3 Meta-reported registrations last week; Static delivered 3 leads and 2 registrations. These are separate tracked actions, not verified paying customers, so it is too early to move all the budget to Video/Reels."
     },
     {
       "title": "How a lead is counted",
-      "body": "Meta reports a lead once someone submits the sign-up email within the same browser session as clicking the ad. If someone clicks on one device or browser and comes back later to sign up on another, Meta may not attribute that lead back to the ad, so the true number of people reached is likely a bit higher than reported here."
+      "body": "Meta's Results count is the Lead event, not a confirmed Lodg signup or paying customer. Cross-device or later registrations may be missed; compare these figures with Lodg's own registration and first-payout records before drawing acquisition-cost conclusions."
     }
   ],
   "nextSteps": [
     {
-      "title": "Shift budget from Static into Video/Reels",
-      "body": "I'll shift some budget from the Static ad set into Video/Reels. After another stable or promising week, we can look to scale further."
+      "title": "Check where the extra traffic drops off",
+      "body": "Review the live ad links and mobile sign-up journey, then compare landing-page views, Lead events and Lodg registrations by date. The new creative is bringing more visitors, but lead volume has not risen with it."
     },
     {
-      "title": "Refresh creative before fatigue sets in",
-      "body": "We're creating new ads now to bring in fresh creative before the current top performers start to fatigue."
+      "title": "Keep both ad sets running while we assess the new ads",
+      "body": "Give the 19–20 October creative a fair test and review each ad's leads and registrations after another full week. Keep the proven $47+gst static ad and Refunding Users creative in the mix; do not scale a repost solely because its clicks are cheap."
     },
     {
-      "title": "Match leads to registrations",
-      "body": "Reconcile Meta's Lead events with Lodg's completed registrations and subsequent activations before treating them as confirmed signups or increasing spend substantially."
+      "title": "Match reported results to paying customers",
+      "body": "Reconcile Meta Lead and Complete Registration events against Lodg's registrations and first payouts. Use cost per activated customer, not just cost per Lead, to decide which ads and ad sets deserve more spend."
     },
     {
-      "title": "Increase budget gradually",
-      "body": "There is room to increase gradually, led by demonstrated results, rather than moving immediately to the full budget pace."
+      "title": "Hold the roughly NZ$4,000 monthly pace for now",
+      "body": "The last reported allocation was NZ$100/day Video/Reels and NZ$33/day Static (NZ$133/day, roughly NZ$3,990 per 30 days). Confirm the live budgets in Ads Manager before changing them. Reallocate within that total only after checking lead quality and registrations; discuss any increase with Lodg after activation costs are known."
     }
   ],
   "budget": [
-    { "value": "NZ$70/day", "label": "Current ad-set budgets, NZ$35/day each" },
-    { "value": "NZ$4,000", "label": "Discussed media budget over 30 days" }
+    { "value": "NZ$133/day", "label": "Last reported allocation: NZ$100 Video/Reels + NZ$33 Static; live setting not verified" },
+    { "value": "NZ$4,000", "label": "Agreed media budget per 30 days (approximately)" }
   ]
 }
