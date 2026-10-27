@@ -1,34 +1,30 @@
 {
-  "reviewedOn": "2026-10-26",
+  "reviewedOn": "2026-10-27",
   "contactEmail": "logan@leanindigital.com",
-  "adsetTakeaway": "For 19–25 October, Video/Reels delivered 6 of 9 Meta-reported leads, but Static delivered 3 leads and 2 of 5 reported registrations. Keep both in the mix while the new ads gather more evidence.",
-  "creativeNote": "The refreshed ads went live around 19–20 October. The Refunding Users repost brought volume and inexpensive visits, while the IRD Letter static also produced leads. Judge the next creative round on registrations and eventual activations, not clicks alone.",
+  "adsetTakeaway": "For 20–26 October, Video/Reels delivered 8 of 10 Meta-reported leads and 4 of 5 reported registrations; Static delivered 2 leads and 1 registration. Keep both in the mix while checking actual signup quality.",
+  "creativeNote": "The refreshed ads went live around 19–20 October. Across the campaign to 26 October, the Refunding Users repost recorded 4 leads on NZ$407.37 spend, while the IRD Letter static recorded 2 leads on NZ$125.54. These are cumulative ad figures, not just this week's results. Judge the next creative round on registrations and eventual activations, not clicks alone.",
   "findings": [
     {
       "title": "New creative is live",
-      "body": "The refreshed Video/Reels and Static ads launched around 19–20 October. In 19–25 October, the Refunding Users repost recorded 4 leads on about NZ$332 spend; the IRD Letter static recorded 2 leads on about NZ$109. Several newer variants have had too little spend to judge yet."
+      "body": "The refreshed Video/Reels and Static ads launched around 19–20 October. Through 26 October, the Refunding Users repost recorded 4 leads on NZ$407.37 spend; the IRD Letter static recorded 2 leads on NZ$125.54. These are cumulative ad figures. Several other new variants still have little evidence."
     },
     {
-      "title": "Volume improved, but leads did not",
-      "body": "Compared with 12–18 October, 19–25 October generated 816 landing-page views versus 353, while reported leads moved from 10 to 9. Spend rose from about NZ$824 to NZ$892. More traffic has not yet translated into more leads."
+      "title": "Traffic rose faster than leads",
+      "body": "Compared with 13–19 October, 20–26 October generated 868 landing-page views versus 338, while reported leads moved from 9 to 10. Spend rose from NZ$820.40 to NZ$949.26. Meta-reported registrations held at 5 in each week. More traffic has not yet yielded a proportionate rise in leads."
     },
     {
-      "title": "Static is contributing to registrations",
-      "body": "Video/Reels delivered 6 leads and 3 Meta-reported registrations last week; Static delivered 3 leads and 2 registrations. These are separate tracked actions, not verified paying customers, so it is too early to move all the budget to Video/Reels."
-    },
-    {
-      "title": "How a lead is counted",
-      "body": "Meta's Results count is the Lead event, not a confirmed Lodg signup or paying customer. Cross-device or later registrations may be missed; compare these figures with Lodg's own registration and first-payout records before drawing acquisition-cost conclusions."
+      "title": "Video/Reels led this week",
+      "body": "Video/Reels delivered 8 leads and 4 Meta-reported registrations on NZ$708.81 during 20–26 October; Static delivered 2 leads and 1 registration on NZ$240.45. These tracked actions are not verified paying customers, so check signup quality before shifting budget."
     }
   ],
   "nextSteps": [
     {
       "title": "Check where the extra traffic drops off",
-      "body": "Review the live ad links and mobile sign-up journey, then compare landing-page views, Lead events and Lodg registrations by date. The new creative is bringing more visitors, but lead volume has not risen with it."
+      "body": "Review the live ad links and mobile sign-up journey, then compare landing-page views, Lead events and Lodg registrations by date. Traffic rose sharply in 20–26 October, but Lead events barely moved."
     },
     {
-      "title": "Keep both ad sets running while we assess the new ads",
-      "body": "Give the 19–20 October creative a fair test and review each ad's leads and registrations after another full week. Keep the proven $47+gst static ad and Refunding Users creative in the mix; do not scale a repost solely because its clicks are cheap."
+      "title": "Review the new ads against registrations",
+      "body": "Compare each new ad's leads and registrations after another full week, and keep the proven $47+gst static ad and Refunding Users creative in the mix while assessing signup quality. Do not scale the repost solely because its clicks are cheap."
     },
     {
       "title": "Match reported results to paying customers",
