@@ -76,13 +76,18 @@ if (periods.toDate && Date.parse(periods.toDate.until) > Date.parse(d.updatedAt)
 // Momentum (fixed 7-day comparison, independent of the period selector)
 const mom = d.momentum || {};
 for (const [k, w] of [["last7", mom.last7], ["prev7", mom.prev7]]) {
+  if (!w && k === "prev7" && typeof mom.comparisonNote === "string" && mom.comparisonNote.trim()) continue;
   if (!w || !isDate(w.since) || !isDate(w.until) || w.since > w.until) fail(`momentum.${k}: since/until must be valid dates in order`);
 }
-if (mom.last7 && mom.prev7) {
+if (mom.last7) {
+  if (mom.last7.since !== periods.last7?.since || mom.last7.until !== periods.last7?.until) fail("momentum.last7 dates must match periods.last7");
+  else compare(periods.last7.totals, mom.last7.totals, "momentum.last7 vs periods.last7", FIELDS);
+  checkTotals(mom.last7.totals, "momentum.last7.totals");
   if (dayNum(mom.last7.until) - dayNum(mom.last7.since) !== 6) fail("momentum.last7 must cover exactly 7 days");
+}
+if (mom.last7 && mom.prev7) {
   if (dayNum(mom.prev7.until) - dayNum(mom.prev7.since) !== 6) fail("momentum.prev7 must cover exactly 7 days");
   if (dayNum(mom.last7.since) - dayNum(mom.prev7.until) !== 1) fail("momentum.prev7 must end the day before momentum.last7 starts");
-  checkTotals(mom.last7.totals, "momentum.last7.totals");
   checkTotals(mom.prev7.totals, "momentum.prev7.totals");
 }
 
@@ -99,9 +104,19 @@ ads.forEach((a, i) => {
   checkTotals(a, `ad "${a.name}"`);
 });
 
-if (errors.length === 0 && periods.toDate) {
-  for (const s of periods.toDate.adsets) {
-    compare(s, sumOf(ads.filter((a) => a.adsetId === s.id), AD_FIELDS), `Sum of ads in "${s.label}" vs toDate ad set`, AD_FIELDS);
+const adsPeriod = d.adsThrough ? { until: d.adsThrough, adsets: d.adsSnapshotAdsets } : periods.toDate;
+if (d.adsThrough) {
+  if (!isDate(d.adsThrough) || d.adsThrough >= periods.toDate?.until || d.adsThrough < d.campaign?.start) fail("adsThrough must precede current campaign-to-date end and follow campaign start");
+  if (!Array.isArray(d.adsSnapshotAdsets) || d.adsSnapshotAdsets.length !== periods.toDate?.adsets?.length) fail("adsSnapshotAdsets must cover all current ad sets");
+  else d.adsSnapshotAdsets.forEach((s, i) => {
+    if (s.id !== periods.toDate.adsets[i].id) fail(`adsSnapshotAdsets[${i}] does not match current ad set`);
+    checkTotals(s, `adsSnapshotAdsets[${i}]`);
+    for (const f of FIELDS) if (s[f] > periods.toDate.adsets[i][f] + (f === "spend" ? SPEND_TOLERANCE : 0)) fail(`adsSnapshotAdsets[${i}].${f} exceeds current value`);
+  });
+}
+if (errors.length === 0 && adsPeriod) {
+  for (const s of adsPeriod.adsets) {
+    compare(s, sumOf(ads.filter((a) => a.adsetId === s.id), AD_FIELDS), `Sum of ads in "${s.label}" vs ad-detail snapshot`, AD_FIELDS);
   }
 }
 

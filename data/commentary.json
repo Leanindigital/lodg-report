@@ -1,42 +1,42 @@
 {
-  "reviewedOn": "2026-10-30",
+  "reviewedOn": "2026-11-05",
   "contactEmail": "logan@leanindigital.com",
-  "adsetTakeaway": "For 23–29 October, Video/Reels delivered 7 of 12 Meta-reported leads and all 3 reported registrations on NZ$699.29; Static delivered 5 leads and no reported registrations on NZ$240.42. Check actual signup quality before changing the mix.",
-  "creativeNote": "The refreshed ads went live around 19–20 October. Across the campaign to 29 October, the Refunding Users repost recorded 5 leads and 2 Meta-reported registrations on NZ$537.22; the IRD Letter static recorded 5 leads and no reported registrations on NZ$190.81. These are cumulative ad figures, not just this week's results. Judge creative on verified registrations and eventual activations, not clicks alone.",
+  "adsetTakeaway": "For 29 October–4 November, Video/Reels generated 7 Meta-reported leads and 4 reported registrations on NZ$521.58; Static generated 4 leads and 1 reported registration on NZ$165.95. These events are not confirmed paying customers.",
+  "creativeNote": "Ad-by-ad data remains through 29 October, while the campaign and ad-set totals above run through 4 November. The newer creative breakdown could not be retrieved, so do not use this ranking to infer which ads drove this week's results.",
   "findings": [
     {
-      "title": "New creative is generating leads",
-      "body": "Through 29 October, the Refunding Users repost recorded 5 leads and 2 Meta-reported registrations on NZ$537.22; the IRD Letter static recorded 5 leads and no reported registrations on NZ$190.81. These are cumulative figures. The difference in reported registrations needs checking against Lodg's records before drawing conclusions about lead quality."
+      "title": "Eleven reported leads in the latest seven days",
+      "body": "Between 29 October and 4 November, the Sole Trader Signups campaign spent NZ$687.53 for 11 Meta-reported leads and 5 reported registrations. This is an attribution-based count, not verified customer activations."
     },
     {
-      "title": "Leads rose, reported registrations fell",
-      "body": "Compared with 16–22 October, 23–29 October generated 12 Meta-reported leads versus 6, with spend at NZ$939.71 versus NZ$883.12. Landing-page views fell from 722 to 599, while Meta-reported registrations fell from 5 to 3. The higher lead count has not yet translated into more reported registrations."
+      "title": "Video/Reels contributed most reported registrations",
+      "body": "Video/Reels recorded 4 of the 5 Meta-reported registrations and 7 of 11 leads in the latest seven days. Static recorded the remaining registration and 4 leads. Check the underlying Lodg records before judging lead quality or changing budget."
     },
     {
-      "title": "Static contributed more leads this week",
-      "body": "During 23–29 October, Video/Reels delivered 7 leads and 3 Meta-reported registrations on NZ$699.29; Static delivered 5 leads and no reported registrations on NZ$240.42. These tracked events are not verified paying customers, so check signup quality before shifting budget."
+      "title": "Detailed comparisons are temporarily unavailable",
+      "body": "The reporting allowance was exhausted before a fresh ad-by-ad breakdown or the matching previous seven-day window could be retrieved. The ad table is explicitly dated through 29 October; no week-on-week change is claimed. Google Ads data is separately dated through 22 October."
     }
   ],
   "nextSteps": [
     {
-      "title": "Check the lead-to-registration journey",
-      "body": "Review the live ad links and mobile sign-up journey, then compare Lead events and Lodg registrations by date and creative. In 23–29 October, more reported leads coincided with fewer reported registrations and fewer landing-page views than the prior week."
+      "title": "Reconcile leads and registrations",
+      "body": "Compare Meta Lead and Complete Registration events with Lodg's own registrations and first payouts before allocating more spend to an ad set."
     },
     {
-      "title": "Review the new ads against registrations",
-      "body": "Compare each new ad's Meta-reported leads and registrations with Lodg's own records after another full week. Keep the established $47+gst static ad and original Refunding Users creative in the mix while assessing quality; do not scale the repost or IRD Letter static solely on clicks or Lead events."
+      "title": "Refresh the missing breakdowns",
+      "body": "When reporting access is restored, retrieve 22–28 October and the ad-by-ad campaign totals through 4 November, then review creative and week-on-week performance on matching dates."
     },
     {
-      "title": "Match reported results to paying customers",
-      "body": "Reconcile Meta Lead and Complete Registration events against Lodg's registrations and first payouts. Use cost per activated customer, not just cost per Lead, to decide which ads and ad sets deserve more spend."
+      "title": "Verify the Google Ads connection",
+      "body": "The Google Ads request was denied on 5 November. Its figures on this portal remain through 22 October, not 4 November; restore access before using that tab for current decisions."
     },
     {
-      "title": "Hold the roughly NZ$4,000 monthly pace for now",
-      "body": "The last reported allocation was NZ$100/day Video/Reels and NZ$33/day Static (NZ$133/day, roughly NZ$3,990 per 30 days). Confirm the live budgets in Ads Manager before changing them. Reallocate within that total only after checking lead quality and registrations; discuss any increase with Lodg after activation costs are known."
+      "title": "Keep budget decisions grounded in activations",
+      "body": "The previously reported allocation was NZ$100/day Video/Reels and NZ$33/day Static. Verify live budgets in Ads Manager before any changes, and discuss increases only after activation costs are known."
     }
   ],
   "budget": [
-    { "value": "NZ$133/day", "label": "Last reported allocation: NZ$100 Video/Reels + NZ$33 Static; live setting not verified" },
+    { "value": "NZ$133/day", "label": "Previously reported allocation: NZ$100 Video/Reels + NZ$33 Static; live setting not verified" },
     { "value": "NZ$4,000", "label": "Agreed media budget per 30 days (approximately)" }
   ]
 }

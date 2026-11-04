@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T12:20:18+13:00",
+  "updatedAt": "2026-11-05T12:06:11+13:00",
   "source": "Meta Ads Manager (Lodg ads, act_845136617574788)",
   "currency": "NZD",
   "campaign": {
@@ -10,115 +10,115 @@
   "periods": {
     "last3": {
       "label": "Last 3 days",
-      "since": "2026-10-27",
-      "until": "2026-10-29",
+      "since": "2026-11-02",
+      "until": "2026-11-04",
       "totals": {
-        "impressions": 13907,
-        "clicks": 565,
-        "linkClicks": 355,
-        "landingPageViews": 292,
-        "leads": 6,
+        "impressions": 7508,
+        "clicks": 349,
+        "linkClicks": 229,
+        "landingPageViews": 175,
+        "leads": 3,
         "registrations": 1,
-        "spend": 424.06
+        "spend": 183.23
       },
       "adsets": [
         {
           "id": "120251238096080660",
           "label": "Video/Reels",
-          "impressions": 10132,
-          "clicks": 492,
-          "linkClicks": 309,
-          "landingPageViews": 255,
-          "leads": 3,
+          "impressions": 5034,
+          "clicks": 287,
+          "linkClicks": 194,
+          "landingPageViews": 144,
+          "leads": 2,
           "registrations": 1,
-          "spend": 318.76
+          "spend": 136.54
         },
         {
           "id": "120251376213170660",
           "label": "Static",
-          "impressions": 3775,
-          "clicks": 73,
-          "linkClicks": 46,
-          "landingPageViews": 37,
-          "leads": 3,
+          "impressions": 2474,
+          "clicks": 62,
+          "linkClicks": 35,
+          "landingPageViews": 31,
+          "leads": 1,
           "registrations": 0,
-          "spend": 105.3
+          "spend": 46.69
         }
       ]
     },
     "last7": {
       "label": "Last 7 days",
-      "since": "2026-10-23",
-      "until": "2026-10-29",
+      "since": "2026-10-29",
+      "until": "2026-11-04",
       "totals": {
-        "impressions": 29943,
-        "clicks": 1290,
-        "linkClicks": 778,
-        "landingPageViews": 599,
-        "leads": 12,
-        "registrations": 3,
-        "spend": 939.71
+        "impressions": 25954,
+        "clicks": 1083,
+        "linkClicks": 711,
+        "landingPageViews": 559,
+        "leads": 11,
+        "registrations": 5,
+        "spend": 687.53
       },
       "adsets": [
         {
           "id": "120251238096080660",
           "label": "Video/Reels",
-          "impressions": 21279,
-          "clicks": 1088,
-          "linkClicks": 667,
-          "landingPageViews": 519,
+          "impressions": 18423,
+          "clicks": 913,
+          "linkClicks": 606,
+          "landingPageViews": 472,
           "leads": 7,
-          "registrations": 3,
-          "spend": 699.29
+          "registrations": 4,
+          "spend": 521.58
         },
         {
           "id": "120251376213170660",
           "label": "Static",
-          "impressions": 8664,
-          "clicks": 202,
-          "linkClicks": 111,
-          "landingPageViews": 80,
-          "leads": 5,
-          "registrations": 0,
-          "spend": 240.42
+          "impressions": 7531,
+          "clicks": 170,
+          "linkClicks": 105,
+          "landingPageViews": 87,
+          "leads": 4,
+          "registrations": 1,
+          "spend": 165.95
         }
       ]
     },
     "toDate": {
       "label": "Campaign to date",
       "since": "2026-09-26",
-      "until": "2026-10-29",
+      "until": "2026-11-04",
       "totals": {
-        "impressions": 130654,
-        "clicks": 4957,
-        "linkClicks": 2888,
-        "landingPageViews": 2325,
-        "leads": 41,
-        "registrations": 13,
-        "spend": 3682.88
+        "impressions": 151918,
+        "clicks": 5870,
+        "linkClicks": 3488,
+        "landingPageViews": 2792,
+        "leads": 49,
+        "registrations": 18,
+        "spend": 4242.82
       },
       "adsets": [
         {
           "id": "120251238096080660",
           "label": "Video/Reels",
-          "impressions": 92494,
-          "clicks": 3926,
-          "linkClicks": 2435,
-          "landingPageViews": 1967,
-          "leads": 29,
-          "registrations": 10,
-          "spend": 2420.87
+          "impressions": 107549,
+          "clicks": 4691,
+          "linkClicks": 2945,
+          "landingPageViews": 2360,
+          "leads": 34,
+          "registrations": 14,
+          "spend": 2845.48
         },
         {
           "id": "120251376213170660",
           "label": "Static",
-          "impressions": 38160,
-          "clicks": 1031,
-          "linkClicks": 453,
-          "landingPageViews": 358,
-          "leads": 12,
-          "registrations": 3,
-          "spend": 1262.01
+          "impressions": 44369,
+          "clicks": 1179,
+          "linkClicks": 543,
+          "landingPageViews": 432,
+          "leads": 15,
+          "registrations": 4,
+          "spend": 1397.34
         }
       ]
     }
@@ -126,31 +126,20 @@
   "defaultPeriod": "last7",
   "momentum": {
     "last7": {
-      "since": "2026-10-23",
-      "until": "2026-10-29",
+      "since": "2026-10-29",
+      "until": "2026-11-04",
       "totals": {
-        "impressions": 29943,
-        "clicks": 1290,
-        "linkClicks": 778,
-        "landingPageViews": 599,
-        "leads": 12,
-        "registrations": 3,
-        "spend": 939.71
+        "impressions": 25954,
+        "clicks": 1083,
+        "linkClicks": 711,
+        "landingPageViews": 559,
+        "leads": 11,
+        "registrations": 5,
+        "spend": 687.53
       }
     },
-    "prev7": {
-      "since": "2026-10-16",
-      "until": "2026-10-22",
-      "totals": {
-        "impressions": 31052,
-        "clicks": 1442,
-        "linkClicks": 902,
-        "landingPageViews": 722,
-        "leads": 6,
-        "registrations": 5,
-        "spend": 883.12
-      }
-    }
+    "prev7": null,
+    "comparisonNote": "A like-for-like 22–28 October comparison could not be retrieved. No percentage changes are shown."
   },
   "adsetLabels": {
     "120251238096080660": "Video/Reels",
@@ -396,6 +385,31 @@
       "leads": 0,
       "registrations": 0,
       "spend": 62.04
+    }
+  ],
+  "adsThrough": "2026-10-29",
+  "adsSnapshotAdsets": [
+    {
+      "id": "120251238096080660",
+      "label": "Video/Reels",
+      "impressions": 92494,
+      "clicks": 3926,
+      "linkClicks": 2435,
+      "landingPageViews": 1967,
+      "leads": 29,
+      "registrations": 10,
+      "spend": 2420.87
+    },
+    {
+      "id": "120251376213170660",
+      "label": "Static",
+      "impressions": 38160,
+      "clicks": 1031,
+      "linkClicks": 453,
+      "landingPageViews": 358,
+      "leads": 12,
+      "registrations": 3,
+      "spend": 1262.01
     }
   ]
 }

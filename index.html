@@ -91,9 +91,9 @@
         <p class="eyebrow">Top-performing ads</p>
         <div class="section__head">
           <h2 id="top-title">The ads producing leads</h2>
-          <span class="period-pill">Campaign to date</span>
+          <span class="period-pill" id="ads-period">Campaign to date</span>
         </div>
-        <p class="section__sub">Ranked by Meta-reported leads, then cost per lead — across the whole campaign, not the date range above.</p>
+        <p class="section__sub" id="ads-sub">Ranked by Meta-reported leads, then cost per lead, across the campaign.</p>
         <div class="top-ads" id="top-ads"></div>
         <p class="takeaway" id="creative-note"></p>
       </section>
@@ -101,6 +101,7 @@
       <section class="section" aria-labelledby="all-title">
         <p class="eyebrow">Every ad</p>
         <h2 id="all-title">All ads, campaign to date</h2>
+        <p class="section__sub" id="all-ads-sub"></p>
         <div class="table-wrap">
           <table class="table" id="ads-table">
             <thead>

@@ -186,6 +186,12 @@
   }
 
   function renderMomentum(d) {
+    if (!d.momentum.prev7) {
+      var recent = d.momentum.last7;
+      $("momentum-sub").textContent = dateShort(recent.since) + " to " + dateShort(recent.until) + ". " + d.momentum.comparisonNote;
+      $("compare").innerHTML = "";
+      return;
+    }
     var a = d.momentum.last7.totals, b = d.momentum.prev7.totals, xa = derive(a), xb = derive(b);
     $("momentum-sub").textContent = dateShort(d.momentum.last7.since) + " to " + dateShort(d.momentum.last7.until) + ", compared with " + dateShort(d.momentum.prev7.since) + " to " + dateShort(d.momentum.prev7.until) + ".";
     var cards = [
@@ -248,6 +254,12 @@
 
   function renderAds(d, commentary) {
     var labels = d.adsetLabels;
+    var adsUntil = d.adsThrough || d.periods.toDate.until;
+    var snapshotLabel = "Ad-level figures: " + dateShort(d.campaign.start) + " to " + dateLong(adsUntil) + ".";
+    $("ads-period").textContent = "Through " + dateShort(adsUntil);
+    $("ads-sub").textContent = snapshotLabel + " Ranked by Meta-reported leads, then cost per lead. These figures do not include later campaign results.";
+    $("all-title").textContent = "All ads through " + dateShort(adsUntil);
+    $("all-ads-sub").textContent = snapshotLabel + (d.adsThrough ? " The newer ad-by-ad breakdown could not be retrieved; campaign and ad-set totals above are through " + dateLong(d.periods.toDate.until) + "." : "");
 
     var top = d.ads.filter(function (a) { return a.leads > 0; }).sort(function (a, b) {
       return b.leads - a.leads || a.spend / a.leads - b.spend / b.leads;
@@ -283,7 +295,7 @@
   }
 
   function renderCommentary(c) {
-    if (c.reviewedOn) $("reviewed").textContent = "Commentary last reviewed " + dateLong(c.reviewedOn) + (c.reviewedBy ? " by " + c.reviewedBy : "") + ". The figures above update daily.";
+    if (c.reviewedOn) $("reviewed").textContent = "Commentary last reviewed " + dateLong(c.reviewedOn) + (c.reviewedBy ? " by " + c.reviewedBy : "") + ". Check the dated data labels above for each section.";
     function items(list) {
       return (list || []).map(function (s) { return "<li><div><h4>" + esc(s.title) + "</h4><p>" + esc(s.body) + "</p></div></li>"; }).join("");
     }
