@@ -1,34 +1,34 @@
 {
-  "reviewedOn": "2026-11-05",
+  "reviewedOn": "2026-11-09",
   "contactEmail": "logan@leanindigital.com",
-  "adsetTakeaway": "For 29 October–4 November, Video/Reels generated 7 Meta-reported leads and 4 reported registrations on NZ$521.58; Static generated 4 leads and 1 reported registration on NZ$165.95. These events are not confirmed paying customers.",
-  "creativeNote": "Ad-by-ad data remains through 29 October, while the campaign and ad-set totals above run through 4 November. The newer creative breakdown could not be retrieved, so do not use this ranking to infer which ads drove this week's results.",
+  "adsetTakeaway": "For 6–8 November, Video/Reels recorded 1 Meta-reported lead and 1 registration on NZ$247.05; Static recorded 5 leads and 1 registration on NZ$189.29. These are attributed events, not confirmed paying customers.",
+  "creativeNote": "Ad-by-ad data remains through 29 October, while campaign and ad-set totals run through 8 November. The newer creative breakdown could not be retrieved, so do not infer which ads drove the latest results.",
   "findings": [
     {
-      "title": "Eleven reported leads in the latest seven days",
-      "body": "Between 29 October and 4 November, the Sole Trader Signups campaign spent NZ$687.53 for 11 Meta-reported leads and 5 reported registrations. This is an attribution-based count, not verified customer activations."
+      "title": "Six reported leads in the latest three days",
+      "body": "From 6–8 November the Sole Trader Signups campaign spent NZ$436.34 for 6 Meta-reported leads and 2 registrations. These are attributed events, not verified customer activations."
     },
     {
-      "title": "Video/Reels contributed most reported registrations",
-      "body": "Video/Reels recorded 4 of the 5 Meta-reported registrations and 7 of 11 leads in the latest seven days. Static recorded the remaining registration and 4 leads. Check the underlying Lodg records before judging lead quality or changing budget."
+      "title": "Static recorded five of six recent leads",
+      "body": "Static recorded 5 reported leads on NZ$189.29 in the 6–8 November window; Video/Reels recorded 1 on NZ$247.05. The three-day sample is small. Check Lodg customer outcomes before drawing a budget conclusion."
     },
     {
-      "title": "Detailed comparisons are temporarily unavailable",
-      "body": "The reporting allowance was exhausted before a fresh ad-by-ad breakdown or the matching previous seven-day window could be retrieved. The ad table is explicitly dated through 29 October; no week-on-week change is claimed. Google Ads data is separately dated through 22 October."
+      "title": "Seven-day and creative views have older dates",
+      "body": "Campaign-to-date totals are through 8 November, but the latest retrieved seven-day view ends 4 November and ad-by-ad detail ends 29 October. The Meta reporting allowance prevented a 2–8 November retrieval. Google Ads remains separately dated through 22 October."
     }
   ],
   "nextSteps": [
     {
-      "title": "Reconcile leads and registrations",
-      "body": "Compare Meta Lead and Complete Registration events with Lodg's own registrations and first payouts before allocating more spend to an ad set."
+      "title": "Reconcile with Lodg activations",
+      "body": "Compare Meta Lead and Complete Registration events with Lodg sign-ups and, once supplied, agreement, payment and paid-subscription milestones before reallocating spend."
     },
     {
-      "title": "Refresh the missing breakdowns",
-      "body": "When reporting access is restored, retrieve 22–28 October and the ad-by-ad campaign totals through 4 November, then review creative and week-on-week performance on matching dates."
+      "title": "Refresh the missing windows and ads",
+      "body": "When Meta reporting access is available, retrieve 2–8 November and the ad-by-ad campaign totals through 8 November, then update the dated seven-day and creative views together."
     },
     {
-      "title": "Verify the Google Ads connection",
-      "body": "The Google Ads request was denied on 5 November. Its figures on this portal remain through 22 October, not 4 November; restore access before using that tab for current decisions."
+      "title": "Verify Google Ads access",
+      "body": "Google Ads figures remain dated through 22 October. Restore and verify that connection before relying on the Google tab for current decisions."
     },
     {
       "title": "Keep budget decisions grounded in activations",
@@ -36,7 +36,13 @@
     }
   ],
   "budget": [
-    { "value": "NZ$133/day", "label": "Previously reported allocation: NZ$100 Video/Reels + NZ$33 Static; live setting not verified" },
-    { "value": "NZ$4,000", "label": "Agreed media budget per 30 days (approximately)" }
+    {
+      "value": "NZ$133/day",
+      "label": "Previously reported allocation: NZ$100 Video/Reels + NZ$33 Static; live setting not verified"
+    },
+    {
+      "value": "NZ$4,000",
+      "label": "Agreed media budget per 30 days (approximately)"
+    }
   ]
 }
