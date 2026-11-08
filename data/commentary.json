@@ -1,20 +1,20 @@
 {
   "reviewedOn": "2026-11-09",
   "contactEmail": "logan@leanindigital.com",
-  "adsetTakeaway": "For 6–8 November, Video/Reels recorded 1 Meta-reported lead and 1 registration on NZ$247.05; Static recorded 5 leads and 1 registration on NZ$189.29. These are attributed events, not confirmed paying customers.",
+  "adsetTakeaway": "For 2–8 November, Video/Reels recorded 5 Meta-reported leads and 4 registrations on NZ$541.00; Static recorded 11 leads and 3 registrations on NZ$287.88. These are attributed events, not confirmed paying customers.",
   "creativeNote": "Ad-by-ad data remains through 29 October, while campaign and ad-set totals run through 8 November. The newer creative breakdown could not be retrieved, so do not infer which ads drove the latest results.",
   "findings": [
     {
-      "title": "Six reported leads in the latest three days",
-      "body": "From 6–8 November the Sole Trader Signups campaign spent NZ$436.34 for 6 Meta-reported leads and 2 registrations. These are attributed events, not verified customer activations."
+      "title": "Sixteen reported leads in the latest seven days",
+      "body": "From 2–8 November the Sole Trader Signups campaign spent NZ$828.88 for 16 Meta-reported leads and 7 registrations. The preceding seven days, 26 October–1 November, recorded 13 leads on NZ$975.15. These are attributed events, not verified customer activations."
     },
     {
-      "title": "Static recorded five of six recent leads",
-      "body": "Static recorded 5 reported leads on NZ$189.29 in the 6–8 November window; Video/Reels recorded 1 on NZ$247.05. The three-day sample is small. Check Lodg customer outcomes before drawing a budget conclusion."
+      "title": "Static recorded most recent leads",
+      "body": "Static recorded 11 of the 16 Meta-reported leads on NZ$287.88 in the latest seven days; Video/Reels recorded 5 leads on NZ$541.00. Compare this with Lodg customer outcomes before drawing a budget conclusion."
     },
     {
-      "title": "Seven-day and creative views have older dates",
-      "body": "Campaign-to-date totals are through 8 November, but the latest retrieved seven-day view ends 4 November and ad-by-ad detail ends 29 October. The Meta reporting allowance prevented a 2–8 November retrieval. Google Ads remains separately dated through 22 October."
+      "title": "Creative and Google figures remain dated",
+      "body": "Campaign and ad-set results run through 8 November, including the current and preceding seven-day windows. Ad-by-ad detail ends 29 October, and Google Ads remains separately dated through 22 October."
     }
   ],
   "nextSteps": [
@@ -23,8 +23,8 @@
       "body": "Compare Meta Lead and Complete Registration events with Lodg sign-ups and, once supplied, agreement, payment and paid-subscription milestones before reallocating spend."
     },
     {
-      "title": "Refresh the missing windows and ads",
-      "body": "When Meta reporting access is available, retrieve 2–8 November and the ad-by-ad campaign totals through 8 November, then update the dated seven-day and creative views together."
+      "title": "Refresh ad-by-ad detail",
+      "body": "When Meta reporting access permits, retrieve ad-by-ad campaign totals through 8 November so creative rankings reflect the latest campaign period."
     },
     {
       "title": "Verify Google Ads access",

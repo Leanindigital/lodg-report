@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T12:24:43+13:00",
+  "updatedAt": "2026-11-09T12:28:35+13:00",
   "source": "Meta Ads Manager (Lodg ads, act_845136617574788)",
   "currency": "NZD",
   "campaign": {
@@ -48,39 +48,39 @@
     },
     "last7": {
       "label": "Last 7 days",
-      "since": "2026-10-29",
-      "until": "2026-11-04",
+      "since": "2026-11-02",
+      "until": "2026-11-08",
       "totals": {
-        "impressions": 25954,
-        "clicks": 1083,
-        "linkClicks": 711,
-        "landingPageViews": 559,
-        "leads": 11,
-        "registrations": 5,
-        "spend": 687.53
+        "impressions": 37362,
+        "clicks": 1502,
+        "linkClicks": 930,
+        "landingPageViews": 721,
+        "leads": 16,
+        "registrations": 7,
+        "spend": 828.88
       },
       "adsets": [
         {
           "id": "120251238096080660",
           "label": "Video/Reels",
-          "impressions": 18423,
-          "clicks": 913,
-          "linkClicks": 606,
-          "landingPageViews": 472,
-          "leads": 7,
+          "impressions": 21182,
+          "clicks": 1108,
+          "linkClicks": 690,
+          "landingPageViews": 553,
+          "leads": 5,
           "registrations": 4,
-          "spend": 521.58
+          "spend": 541.0
         },
         {
           "id": "120251376213170660",
           "label": "Static",
-          "impressions": 7531,
-          "clicks": 170,
-          "linkClicks": 105,
-          "landingPageViews": 87,
-          "leads": 4,
-          "registrations": 1,
-          "spend": 165.95
+          "impressions": 16180,
+          "clicks": 394,
+          "linkClicks": 240,
+          "landingPageViews": 168,
+          "leads": 11,
+          "registrations": 3,
+          "spend": 287.88
         }
       ]
     },
@@ -123,23 +123,34 @@
       ]
     }
   },
-  "defaultPeriod": "toDate",
+  "defaultPeriod": "last7",
   "momentum": {
     "last7": {
-      "since": "2026-10-29",
-      "until": "2026-11-04",
+      "since": "2026-11-02",
+      "until": "2026-11-08",
       "totals": {
-        "impressions": 25954,
-        "clicks": 1083,
-        "linkClicks": 711,
-        "landingPageViews": 559,
-        "leads": 11,
-        "registrations": 5,
-        "spend": 687.53
+        "impressions": 37362,
+        "clicks": 1502,
+        "linkClicks": 930,
+        "landingPageViews": 721,
+        "leads": 16,
+        "registrations": 7,
+        "spend": 828.88
       }
     },
-    "prev7": null,
-    "comparisonNote": "The displayed seven-day window is 29 October–4 November. The 2–8 November breakdown could not be retrieved, so no current week-on-week comparison is shown."
+    "prev7": {
+      "since": "2026-10-26",
+      "until": "2026-11-01",
+      "totals": {
+        "impressions": 32485,
+        "clicks": 1346,
+        "linkClicks": 854,
+        "landingPageViews": 675,
+        "leads": 13,
+        "registrations": 6,
+        "spend": 975.15
+      }
+    }
   },
   "adsetLabels": {
     "120251238096080660": "Video/Reels",
