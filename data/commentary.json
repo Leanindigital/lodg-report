@@ -2,7 +2,7 @@
   "reviewedOn": "2026-11-09",
   "contactEmail": "logan@leanindigital.com",
   "adsetTakeaway": "For 2–8 November, Video/Reels recorded 5 Meta-reported leads and 4 registrations on NZ$541.00; Static recorded 11 leads and 3 registrations on NZ$287.88. These are attributed events, not confirmed paying customers.",
-  "creativeNote": "Ad-by-ad data remains through 29 October, while campaign and ad-set totals run through 8 November. The newer creative breakdown could not be retrieved, so do not infer which ads drove the latest results.",
+  "creativeNote": "Top ads are ranked by Meta-reported leads for 10 October–8 November, not by verified paid subscriptions. IRD Letter: 16 leads at NZ$28.34 each; Refunding Users (repost): 9 at NZ$100.95; original Refunding Users: 8 at NZ$78.10. The repost and original are separate ad IDs. The ad detail is a 30-day window; campaign-to-date totals start 26 September.",
   "findings": [
     {
       "title": "Sixteen reported leads in the latest seven days",
@@ -13,8 +13,8 @@
       "body": "Static recorded 11 of the 16 Meta-reported leads on NZ$287.88 in the latest seven days; Video/Reels recorded 5 leads on NZ$541.00. Compare this with Lodg customer outcomes before drawing a budget conclusion."
     },
     {
-      "title": "Creative and Google figures remain dated",
-      "body": "Campaign and ad-set results run through 8 November, including the current and preceding seven-day windows. Ad-by-ad detail ends 29 October, and Google Ads remains separately dated through 22 October."
+      "title": "Ad creative is now current through 8 November",
+      "body": "The latest 30-day ad view (10 October–8 November) ranks IRD Letter first with 16 Meta-reported leads, Refunding Users (repost) second with 9, and original Refunding Users third with 8. Campaign-to-date results use a longer period, so do not compare the totals directly. Google Ads remains dated through 22 October."
     }
   ],
   "nextSteps": [
@@ -23,8 +23,8 @@
       "body": "Compare Meta Lead and Complete Registration events with Lodg sign-ups and, once supplied, agreement, payment and paid-subscription milestones before reallocating spend."
     },
     {
-      "title": "Refresh ad-by-ad detail",
-      "body": "When Meta reporting access permits, retrieve ad-by-ad campaign totals through 8 November so creative rankings reflect the latest campaign period."
+      "title": "Check customer outcomes for the leading ads",
+      "body": "Compare the attributed leads and registrations from IRD Letter and both Refunding Users ads with Lodg sign-ups and paid subscriptions. The repost and original are separate ads and their results should not be combined in the ranking."
     },
     {
       "title": "Verify Google Ads access",

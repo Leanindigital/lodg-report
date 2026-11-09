@@ -106,7 +106,8 @@ ads.forEach((a, i) => {
 
 const adsPeriod = d.adsThrough ? { until: d.adsThrough, adsets: d.adsSnapshotAdsets } : periods.toDate;
 if (d.adsThrough) {
-  if (!isDate(d.adsThrough) || d.adsThrough >= periods.toDate?.until || d.adsThrough < d.campaign?.start) fail("adsThrough must precede current campaign-to-date end and follow campaign start");
+  if (!isDate(d.adsThrough) || d.adsThrough > periods.toDate?.until || d.adsThrough < d.campaign?.start) fail("adsThrough must not exceed the campaign-to-date end or precede campaign start");
+  if (d.adsSince && (!isDate(d.adsSince) || d.adsSince < d.campaign?.start || d.adsSince > d.adsThrough)) fail("adsSince must fall within campaign start and adsThrough");
   if (!Array.isArray(d.adsSnapshotAdsets) || d.adsSnapshotAdsets.length !== periods.toDate?.adsets?.length) fail("adsSnapshotAdsets must cover all current ad sets");
   else d.adsSnapshotAdsets.forEach((s, i) => {
     if (s.id !== periods.toDate.adsets[i].id) fail(`adsSnapshotAdsets[${i}] does not match current ad set`);

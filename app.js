@@ -248,6 +248,8 @@
 
   var AD_SCREENSHOTS = {
     "120251375340930660": "assets/ad-refunding-users.png",
+    "120251989123830660": "assets/ad-refunding-repost.png",
+    "120251973415040660": "assets/ad-ird-letter.png",
     "120251375340970660": "assets/ad-wife.png",
     "120251376356230660": "assets/ad-47gst.png"
   };
@@ -255,11 +257,11 @@
   function renderAds(d, commentary) {
     var labels = d.adsetLabels;
     var adsUntil = d.adsThrough || d.periods.toDate.until;
-    var snapshotLabel = "Ad-level figures: " + dateShort(d.campaign.start) + " to " + dateLong(adsUntil) + ".";
+    var snapshotLabel = "Ad-level figures: " + dateShort(d.adsSince || d.campaign.start) + " to " + dateLong(adsUntil) + ".";
     $("ads-period").textContent = "Through " + dateShort(adsUntil);
-    $("ads-sub").textContent = snapshotLabel + " Ranked by Meta-reported leads, then cost per lead. These figures do not include later campaign results.";
+    $("ads-sub").textContent = snapshotLabel + " Ranked by Meta-reported leads, then cost per lead. This ad window differs from the campaign-to-date window above.";
     $("all-title").textContent = "All ads through " + dateShort(adsUntil);
-    $("all-ads-sub").textContent = snapshotLabel + (d.adsThrough ? " The newer ad-by-ad breakdown could not be retrieved; campaign and ad-set totals above are through " + dateLong(d.periods.toDate.until) + "." : "");
+    $("all-ads-sub").textContent = snapshotLabel + (adsUntil < d.periods.toDate.until ? " Campaign and ad-set totals above run through " + dateLong(d.periods.toDate.until) + "." : "");
 
     var top = d.ads.filter(function (a) { return a.leads > 0; }).sort(function (a, b) {
       return b.leads - a.leads || a.spend / a.leads - b.spend / b.leads;
