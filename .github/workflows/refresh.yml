@@ -32,7 +32,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Pull latest Meta figures
         env:
@@ -44,12 +44,13 @@ jobs:
 
       - name: Save data to the repo
         run: |
-          if git diff --quiet -- data/; then
+          # Stage first so a brand new file (the first run's meta-daily.json) counts as a change.
+          git add data/
+          if git diff --cached --quiet -- data/; then
             echo "No data changes."
           else
             git config user.name "lodg-report-bot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/
             git commit -m "Daily data refresh $(TZ=Pacific/Auckland date +%Y-%m-%d)"
             git pull --rebase origin main
             git push origin HEAD:main

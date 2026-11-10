@@ -13,7 +13,7 @@ const CONFIG = {
   campaignId: "120251238096060660",
   campaignStart: "2026-09-26",
   timezone: "Pacific/Auckland",
-  apiVersion: process.env.META_API_VERSION || "v24.0",
+  apiVersion: process.env.META_API_VERSION || "v25.0",
   graphBase: process.env.META_GRAPH_BASE || "https://graph.facebook.com",
   // Friendly ad-set names shown on the page. New ad sets fall back to their Meta name.
   adsetLabels: {
