@@ -1,0 +1,65 @@
+name: Refresh and publish report
+
+# Runs at 19:45 and 20:45 UTC every day. That is 8:45am and 9:45am NZ daylight time, or
+# 7:45am and 8:45am NZ standard time, so fresh figures are always live by 9am NZ year-round.
+# The second run picks up any leads Meta attributes late. A run can also be started by hand
+# from the Actions tab ("Run workflow"), and any push to main republishes the page.
+on:
+  schedule:
+    - cron: "45 19 * * *"
+    - cron: "45 20 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: refresh-report
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Pull latest Meta figures
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+        run: node scripts/fetch-meta.mjs
+
+      - name: Validate
+        run: node scripts/validate.mjs
+
+      - name: Save data to the repo
+        run: |
+          if git diff --quiet -- data/; then
+            echo "No data changes."
+          else
+            git config user.name "lodg-report-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/
+            git commit -m "Daily data refresh $(TZ=Pacific/Auckland date +%Y-%m-%d)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
