@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 
 const FIELDS = ["impressions", "clicks", "linkClicks", "landingPageViews", "leads", "registrations", "spend"];
 const errors = [];
+const warnings = [];
 const fail = (msg) => errors.push(msg);
 const read = (p) => JSON.parse(readFileSync(new URL("../data/" + p, import.meta.url), "utf8"));
 
@@ -43,10 +44,15 @@ const seen = new Set();
     else if (FIELDS[j] !== "spend" && !Number.isInteger(v)) fail(`rows[${i}].${FIELDS[j]} must be a whole number`);
     sum[FIELDS[j]] += v;
   });
+  // Meta counts "clicks (all)" and link clicks separately, so on small days link clicks can
+  // exceed all clicks (or clicks exceed impressions). That's Meta's data, not a broken file,
+  // so note it without blocking the refresh.
   const [imp, clicks, link] = vals;
-  if (clicks > imp) fail(`rows[${i}]: clicks (${clicks}) exceed impressions (${imp})`);
-  if (link > clicks) fail(`rows[${i}]: link clicks (${link}) exceed all clicks (${clicks})`);
+  if (clicks > imp) warnings.push(`rows[${i}]: clicks (${clicks}) exceed impressions (${imp})`);
+  if (link > clicks) warnings.push(`rows[${i}]: link clicks (${link}) exceed all clicks (${clicks})`);
 });
+
+if (warnings.length) console.log(`Note: ${warnings.length} row(s) where Meta's click counts don't nest (expected on small days):\n- ` + warnings.slice(0, 10).join("\n- "));
 
 for (const f of FIELDS) {
   const diff = Math.abs(sum[f] - (d.totals?.[f] ?? NaN));
