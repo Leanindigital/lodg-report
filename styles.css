@@ -138,6 +138,30 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; }
   background: #fff; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 8px 18px;
 }
 .period-btn.is-active { background: var(--blue); color: #fff; border-color: var(--blue); }
+.period-btn:hover:not(.is-active) { color: var(--ink); border-color: var(--blue-mute); }
+.period-btn:focus-visible, .range__apply:focus-visible, .range__custom input:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+/* Date range */
+.range {
+  position: sticky; top: 0; z-index: 5; margin-top: 32px; padding: 14px 0 12px;
+  background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line);
+}
+.range__label { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.range .period-toggle { margin-top: 0; }
+.range__custom { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 14px; margin-top: 12px; }
+.range__custom[hidden] { display: none; }
+.range__custom label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; color: var(--muted); }
+.range__custom input {
+  font-family: var(--font); font-size: 14px; color: var(--ink); padding: 7px 10px;
+  border: 1px solid var(--line); border-radius: 8px; background: #fff; min-height: 38px;
+}
+.range__apply {
+  font-family: var(--font); font-size: 14px; font-weight: 600; cursor: pointer; min-height: 38px;
+  background: var(--blue); color: #fff; border: 0; border-radius: 8px; padding: 8px 18px;
+}
+.range__apply:hover { background: var(--blue-dark); }
+.range__error { font-size: 13px; color: var(--bad); }
+.range__note { margin: 8px 0 0; font-size: 12px; color: var(--muted); }
 
 /* Funnel */
 .funnel { margin-top: 28px; }
@@ -300,7 +324,11 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; }
   .funnel__label { min-width: 0; width: 100%; }
   .platform-tabs { gap: 2px; }
   .platform-tab { padding: 8px 16px; font-size: 14px; }
-  .period-btn { padding: 7px 14px; font-size: 13px; }
+  .period-btn { padding: 7px 14px; font-size: 13px; white-space: nowrap; }
+  .range .period-toggle { flex-wrap: nowrap; overflow-x: auto; margin: 0 -18px; padding: 2px 18px; scrollbar-width: none; }
+  .range .period-toggle::-webkit-scrollbar { display: none; }
+  .range__custom label { flex: 1 1 130px; }
+  .range { position: static; backdrop-filter: none; }
   .hero__title { gap: 10px; }
   .funnel__value { font-size: 22px; }
 }

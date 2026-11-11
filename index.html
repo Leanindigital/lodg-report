@@ -44,17 +44,23 @@
     <!-- ===================== META TAB ===================== -->
     <div id="panel-meta" class="platform-panel">
 
-      <div class="period-toggle" id="period-toggle" role="tablist" aria-label="Date range">
-        <button type="button" class="period-btn" data-period="last3" role="tab">Last 3 days</button>
-        <button type="button" class="period-btn" data-period="last7" role="tab">Last 7 days</button>
-        <button type="button" class="period-btn" data-period="toDate" role="tab">Campaign to date</button>
+      <div class="range" aria-label="Date range">
+        <p class="range__label">Date range</p>
+        <div class="period-toggle" id="range-presets"></div>
+        <form class="range__custom" id="range-custom" hidden>
+          <label>From <input type="date" id="range-from" required></label>
+          <label>To <input type="date" id="range-to" required></label>
+          <button type="submit" class="range__apply">Apply</button>
+          <span class="range__error" id="range-error" role="alert"></span>
+        </form>
+        <p class="range__note" id="range-note"></p>
       </div>
 
       <section class="section" aria-labelledby="results-title">
         <div class="section__head">
           <div>
             <p class="eyebrow">Campaign results</p>
-            <h2 id="results-title">Last 7 days</h2>
+            <h2 id="results-title">Loading…</h2>
             <p class="section__sub" id="results-sub"></p>
           </div>
           <img class="lodg-logo" src="assets/lodg-logo.png" alt="Lodg">
@@ -72,7 +78,7 @@
 
       <section class="section" aria-labelledby="momentum-title">
         <p class="eyebrow">Momentum</p>
-        <h2 id="momentum-title">Last 7 days</h2>
+        <h2 id="momentum-title">Compared with the previous period</h2>
         <p class="section__sub" id="momentum-sub"></p>
         <div class="compare" id="compare"></div>
         <p class="fineprint">Meta keeps attributing leads for several days after an ad is seen, so the most recent days can still rise.</p>
@@ -91,16 +97,16 @@
         <p class="eyebrow">Top-performing ads</p>
         <div class="section__head">
           <h2 id="top-title">The ads producing leads</h2>
-          <span class="period-pill" id="ads-period">Campaign to date</span>
+          <span class="period-pill" id="ads-period"></span>
         </div>
-        <p class="section__sub" id="ads-sub">Ranked by Meta-reported leads, then cost per lead, across the campaign.</p>
+        <p class="section__sub" id="ads-sub"></p>
         <div class="top-ads" id="top-ads"></div>
         <p class="takeaway" id="creative-note"></p>
       </section>
 
       <section class="section" aria-labelledby="all-title">
         <p class="eyebrow">Every ad</p>
-        <h2 id="all-title">All ads, campaign to date</h2>
+        <h2 id="all-title">All ads</h2>
         <p class="section__sub" id="all-ads-sub"></p>
         <div class="table-wrap">
           <table class="table" id="ads-table">
@@ -201,6 +207,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=20261109-top-ads"></script>
+  <script src="app.js?v=20261110-date-range"></script>
 </body>
 </html>
