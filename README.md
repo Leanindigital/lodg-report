@@ -33,7 +33,7 @@ If Meta ever rejects the token, the run fails with a message saying so; generate
 
 ## Definitions
 
-- Results: Meta `lead` action count for this Leads campaign. This is not the same as Lodg registrations.
+- Results: website leads (Meta `offsite_conversion.fb_pixel_lead`), the same as Ads Manager's "Results" for this campaign. On-Facebook form leads are not included. This is not the same as Lodg registrations.
 - Registrations: Meta `complete_registration` action.
 - Clicks: all clicks. Link clicks: `inline_link_clicks`. Landing-page views: `landing_page_view` action.
 - Figures use each ad set's own attribution setting, matching Ads Manager. Conversions are dated to the day the ad was seen or clicked (Meta's default), so the most recent days can still rise as late leads are attributed; each daily run refetches the whole campaign, so those updates are picked up.
