@@ -22,9 +22,12 @@ const CONFIG = {
   }
 };
 
-// First match wins, so a lead is never counted twice under two action types.
+// First match wins, so nothing is counted twice under two action types.
+// Leads are website (pixel) leads only, which is what Ads Manager reports as "Results" for this
+// campaign. Meta's broader "lead" count also includes on-Facebook form leads, which Ads Manager
+// leaves out of Results.
 const ACTION_TYPES = {
-  leads: ["lead", "offsite_conversion.fb_pixel_lead", "onsite_conversion.lead_grouped"],
+  leads: ["offsite_conversion.fb_pixel_lead"],
   registrations: ["complete_registration", "omni_complete_registration", "offsite_conversion.fb_pixel_complete_registration"],
   landingPageViews: ["landing_page_view", "omni_landing_page_view"]
 };
