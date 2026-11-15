@@ -231,6 +231,8 @@
     var days = daysInclusive(meta.since, meta.through);
     $("hero-sub").textContent = "Sole Trader Signups campaign · " + dateShort(meta.since) + " to " + dateLong(meta.through) + " (" + days + " days)";
     $("updated").textContent = "Data last updated: " + timestamp(meta.updatedAt);
+    // The independent, partial-day snapshot is shown only until the daily feed includes 15 November.
+    $("partial-snapshot").hidden = meta.through >= "2026-11-15";
 
     var ageHours = (Date.now() - Date.parse(meta.updatedAt)) / 3600000;
     if (ageHours > STALE_AFTER_HOURS) {
