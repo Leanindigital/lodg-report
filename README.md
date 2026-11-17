@@ -18,7 +18,7 @@ Presets: last 3, 7, 14 and 30 days, this month, last month, campaign to date, pl
 
 ## Daily refresh
 
-GitHub Actions runs `refresh.yml` at 19:45 and 20:45 UTC: 8:45am and 9:45am NZ daylight time, or 7:45am and 8:45am NZ standard time. Either way, fresh figures are live by 9am NZ. Each run fetches campaign start to yesterday (NZ time), validates, commits `data/` and redeploys Pages. If anything fails, nothing is deployed, the live page keeps the previous figures, and GitHub emails the repo admins. The page shows a "not refreshed" notice if the data is more than 30 hours old.
+GitHub Actions runs `refresh.yml` four times overnight NZ time (12:23, 14:23, 16:23 and 18:23 UTC). GitHub often starts scheduled runs hours late, so the spread means at least one run lands before 9am NZ. Each run fetches campaign start to yesterday (NZ time), validates, commits `data/` and redeploys Pages. If anything fails, nothing is deployed, the live page keeps the previous figures, and GitHub emails the account that last changed the schedule (the Leanindigital account), if Actions emails are switched on in its notification settings. The page shows a "not refreshed" notice if the data is more than 30 hours old.
 
 To refresh on demand, open **Actions → Refresh and publish report → Run workflow**.
 
