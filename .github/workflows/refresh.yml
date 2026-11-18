@@ -1,13 +1,16 @@
 name: Refresh and publish report
 
-# Runs at 19:45 and 20:45 UTC every day. That is 8:45am and 9:45am NZ daylight time, or
-# 7:45am and 8:45am NZ standard time, so fresh figures are always live by 9am NZ year-round.
-# The second run picks up any leads Meta attributes late. A run can also be started by hand
-# from the Actions tab ("Run workflow"), and any push to main republishes the page.
+# Aim: fresh figures live by 7am NZ. GitHub starts scheduled runs late when it's busy (we have
+# seen 1 to 7 hours), so this runs every hour from just after midnight to 6am NZ daylight time:
+# 11:07 to 17:07 UTC. Each run refetches the whole campaign, so later runs replace any figures
+# from earlier runs and pick up late-attributed leads. In NZ standard time (April to September)
+# the 11:07 UTC run is 11:07pm the night before and just republishes the same figures; the rest
+# run from 12:07am to 5:07am.
+# A run can also be started by hand from the Actions tab ("Run workflow"), and any push to main
+# republishes the page.
 on:
   schedule:
-    - cron: "45 19 * * *"
-    - cron: "45 20 * * *"
+    - cron: "7 11-17 * * *"
   workflow_dispatch:
   push:
     branches: [main]
