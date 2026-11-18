@@ -143,8 +143,7 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; }
 
 /* Date range */
 .range {
-  position: sticky; top: 0; z-index: 5; margin-top: 32px; padding: 14px 0 12px;
-  background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line);
+  margin-top: 32px; padding: 14px 0 12px; border-bottom: 1px solid var(--line);
 }
 .range__label { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .range .period-toggle { margin-top: 0; }
@@ -328,7 +327,6 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; }
   .range .period-toggle { flex-wrap: nowrap; overflow-x: auto; margin: 0 -18px; padding: 2px 18px; scrollbar-width: none; }
   .range .period-toggle::-webkit-scrollbar { display: none; }
   .range__custom label { flex: 1 1 130px; }
-  .range { position: static; backdrop-filter: none; }
   .hero__title { gap: 10px; }
   .funnel__value { font-size: 22px; }
 }
