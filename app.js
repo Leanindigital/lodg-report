@@ -228,8 +228,7 @@
 
   // ----- sections -----
   function renderHero() {
-    var days = daysInclusive(meta.since, meta.through);
-    $("hero-sub").textContent = "Sole Trader Signups campaign · " + dateShort(meta.since) + " to " + dateLong(meta.through) + " (" + days + " days)";
+    $("hero-sub").textContent = "Sole Trader Signups campaign · Started " + dateLong(meta.since);
     $("updated").textContent = "Data last updated: " + timestamp(meta.updatedAt);
 
     var ageHours = (Date.now() - Date.parse(meta.updatedAt)) / 3600000;
