@@ -378,7 +378,9 @@
     "120251989123830660": "assets/ad-refunding-repost.png",
     "120251973415040660": "assets/ad-ird-letter.png",
     "120251375340970660": "assets/ad-wife.png",
-    "120251376356230660": "assets/ad-47gst.png"
+    "120251376356230660": "assets/ad-47gst.png",
+    "120252589699690660": "assets/ad-ird-notification.png",
+    "120252576156710660": "assets/ad-refunding-day7.png"
   };
 
   function renderAds(p) {
